@@ -220,7 +220,7 @@ input[type=range].olti::-moz-range-thumb{width:30px;height:30px;border-radius:50
           <button type="button" onClick="{{ next }}" style="min-height:56px;border:0;border-radius:8px;background:#00B0A8;color:#002858;font-size:17px;font-weight:800;cursor:pointer;letter-spacing:.01em" style-hover="background:#00C4BB">{{ nextLabel }}</button>
         </div>
       </sc-if>
-      <button type="button" onClick="{{ reset }}" style="align-self:flex-start;margin-top:8px;min-height:44px;padding:0 4px;border:0;background:transparent;font-size:13px;font-weight:600;color:#5B6578;cursor:pointer;text-decoration:underline;text-underline-offset:3px">← {{ t.intro.eyebrow }}</button>
+      <button type="button" onClick="{{ confirmReset }}" style="align-self:flex-start;margin-top:8px;min-height:44px;padding:0 4px;border:0;background:transparent;font-size:13px;font-weight:600;color:#5B6578;cursor:pointer;text-decoration:underline;text-underline-offset:3px" style-hover="color:#B8412D">↺ {{ t.badge.startOver }}</button>
     </section>
   </sc-if>
 
@@ -462,7 +462,7 @@ class Component extends DCLogic {
       sourceCheckedLabel: `${({ en: 'Sources checked', it: 'Fonti verificate il', fr: 'Sources vérifiées le', ar: 'تم التحقق من المصادر في' })[s.lang]} ${data.meta.sourceChecked}`,
       choices: chapter.choices.map((c, i) => { const active = s.picked === i, dim = s.picked != null && !active; return { text: c.text, pick: () => this.pick(i), disabled: s.picked != null, active, arrow: active ? '✓' : (s.lang === 'ar' ? '←' : '→'), border: active ? '#002858' : '#C9CFD9', bg: active ? '#002858' : '#fff', fg: active ? '#fff' : '#0F1B33', opacity: dim ? .45 : 1 }; }),
       next: () => this.next(), nextLabel: ch && ch.next === 'end' ? t.common.finish : t.common.continue,
-      reset: () => this.doReset(false), resetToast: () => this.doReset(true), otherId: () => this.start(blue ? 'green' : 'blue'),
+      reset: () => this.doReset(false), confirmReset: () => { if (s.costs.length === 0 || window.confirm(t.badge.confirmReset)) this.doReset(false); }, resetToast: () => this.doReset(true), otherId: () => this.start(blue ? 'green' : 'blue'),
       email: () => this.email(), share: () => this.share(),
       realStories: t.realStories.items.map(i => ({ ...i, url: src[i.url], tag: t.common.documented })),
       sourceItems: t.sources.items.map((text, i) => ({ text, url: srcMap[i].url })) };
