@@ -69,8 +69,8 @@
    "intro": {
     "eyebrow": "An interactive story about family life",
     "title": "One Love,<br><span class=\"accent\">Two IDs</span>",
-    "lede": "You found each other across a wall. Now try to build an ordinary life together — while two different legal statuses shape every decision.",
-    "duration": "3–5 minutes",
+    "lede": "You found each other across a wall. Now try to build an ordinary life together, while two different legal statuses shape every decision.",
+    "duration": "3 to 5 minutes",
     "mobile": "Made for phones",
     "noData": "No personal data collected",
     "context": "<b>Before you begin:</b> Palestinians in East Jerusalem generally hold Israeli permanent residency, while Palestinians in the West Bank carry Palestinian Authority IDs. The distance may be short, but the rules for movement, residence and family life are not the same.",
@@ -86,7 +86,7 @@
    },
    "how": {
     "title": "How to experience the story",
-    "ready": "I understand — begin",
+    "ready": "I understand, begin",
     "steps": [
      "Choose one of the two IDs.",
      "Make the decisions a couple faces over 12 years.",
@@ -125,7 +125,7 @@
     {
      "title": "Seeing each other",
      "year": 1,
-     "text": "A year in, you have memorised the rhythm of crossings. To spend a weekend together, someone has to move — and movement between Jerusalem and the West Bank is governed by permits and checkpoints.",
+     "text": "A year in, you have memorised the rhythm of crossings. To spend a weekend together, someone has to move, and movement between Jerusalem and the West Bank is governed by permits and checkpoints.",
      "choices": [
       {
        "text": "Nour applies for a visit permit",
@@ -137,7 +137,7 @@
       {
        "text": "You make the crossing instead",
        "log": "Carried the distance repeatedly",
-       "consequenceBlue": "As the Jerusalem resident, you can usually reach Nour more easily than Nour can reach you — so you carry most of the travel.",
+       "consequenceBlue": "As the Jerusalem resident, you can usually reach Nour more easily than Nour can reach you, so you carry most of the travel.",
        "consequenceGreen": "As the West Bank ID holder, your access to Jerusalem depends on permission, so the couple’s freedom of movement is unequal from the start.",
        "fact": "The practical ability to travel is shaped by legal status, permit rules and checkpoints, not simply by physical distance.",
        "next": 2
@@ -243,7 +243,7 @@
    "end": {
     "eyebrow": "Years later",
     "title": "Still here. Still choosing each other.",
-    "aha": "Two people, one family — and a life repeatedly divided by documents, borders and permissions.",
+    "aha": "Two people, one family, and a life repeatedly divided by documents, borders and permissions.",
     "message": "Your choices changed the route, but none removed the underlying inequality. That is the point: the burden is built into the system, not into the family.",
     "disclaimer": "<b>Important:</b> This is an educational and advocacy experience, not legal advice. Nour is fictional; the patterns and real-case summaries are based on publicly documented material. Individual outcomes differ, and limited exceptions may apply. Sources last reviewed on 1 August 2026."
    },
@@ -312,8 +312,8 @@
     "nextVisitor": "Finish and reset for the next visitor"
    },
    "mail": {
-    "subject": "The right to family life — One Love, Two IDs",
-    "body": "Dear Representative,\n\nI completed an interactive story about a Palestinian couple — one with Jerusalem residency and one with a West Bank ID — trying to live together as a family.\n\nThe Citizenship and Entry into Israel Law restricts family unification and can leave families dependent on temporary permits, renewals and exceptions. I ask you to raise the impact of these policies and support equal protection of the right to family life.\n\nSincerely,\nA concerned constituent"
+    "subject": "The right to family life: One Love, Two IDs",
+    "body": "Dear Representative,\n\nI completed an interactive story about a Palestinian couple, one with Jerusalem residency and one with a West Bank ID, trying to live together as a family.\n\nThe Citizenship and Entry into Israel Law restricts family unification and can leave families dependent on temporary permits, renewals and exceptions. I ask you to raise the impact of these policies and support equal protection of the right to family life.\n\nSincerely,\nA concerned constituent"
    },
    "toast": {
     "copied": "Link copied",
@@ -456,7 +456,7 @@
     "eyebrow": "Una storia interattiva sulla vita familiare",
     "title": "Un solo amore,<br><span class=\"accent\">due documenti</span>",
     "lede": "Vi siete incontrati al di là di un muro. Ora provate a costruire una vita normale insieme, mentre due status giuridici diversi condizionano ogni decisione.",
-    "duration": "3–5 minuti",
+    "duration": "3 to 5 minuti",
     "mobile": "Pensata per smartphone",
     "noData": "Nessun dato personale raccolto",
     "context": "<b>Prima di iniziare:</b> i palestinesi di Gerusalemme Est hanno generalmente la residenza permanente israeliana, mentre quelli della Cisgiordania possiedono documenti dell’Autorità Palestinese. La distanza può essere breve, ma le regole su movimento, residenza e vita familiare non sono le stesse.",
@@ -472,7 +472,7 @@
    },
    "how": {
     "title": "Come vivere la storia",
-    "ready": "Ho capito — inizia",
+    "ready": "Ho capito, inizia",
     "steps": [
      "Scegli uno dei due documenti.",
      "Prendi le decisioni che una coppia affronta in 12 anni.",
@@ -629,7 +629,7 @@
    "end": {
     "eyebrow": "Anni dopo",
     "title": "Ancora qui. Ancora insieme.",
-    "aha": "Due persone, una famiglia — e una vita divisa ripetutamente da documenti, confini e permessi.",
+    "aha": "Due persone, una famiglia, e una vita divisa ripetutamente da documenti, confini e permessi.",
     "message": "Le tue scelte hanno cambiato il percorso, ma non hanno eliminato la disuguaglianza di fondo. Il peso è costruito nel sistema, non nella famiglia.",
     "disclaimer": "<b>Importante:</b> questa è un’esperienza educativa e di advocacy, non consulenza legale. Nour è un personaggio immaginario; i modelli e i casi reali si basano su materiali pubblici. Gli esiti individuali variano e possono applicarsi eccezioni limitate. Fonti verificate il 1° agosto 2026."
    },
@@ -698,8 +698,8 @@
     "nextVisitor": "Termina e prepara per il prossimo visitatore"
    },
    "mail": {
-    "subject": "Il diritto alla vita familiare — Un solo amore, due documenti",
-    "body": "Gentile Rappresentante,\n\nHo completato una storia interattiva su una coppia palestinese — una persona con residenza a Gerusalemme e una con documento della Cisgiordania — che cerca di vivere insieme come famiglia.\n\nLa Legge sulla cittadinanza e l’ingresso limita il ricongiungimento familiare e può lasciare le famiglie dipendenti da permessi temporanei, rinnovi ed eccezioni. Le chiedo di sollevare l’impatto di queste politiche e sostenere la tutela paritaria del diritto alla vita familiare.\n\nCordiali saluti"
+    "subject": "Il diritto alla vita familiare: Un solo amore, due documenti",
+    "body": "Gentile Rappresentante,\n\nHo completato una storia interattiva su una coppia palestinese, una persona con residenza a Gerusalemme e una con documento della Cisgiordania, che cerca di vivere insieme come famiglia.\n\nLa Legge sulla cittadinanza e l’ingresso limita il ricongiungimento familiare e può lasciare le famiglie dipendenti da permessi temporanei, rinnovi ed eccezioni. Le chiedo di sollevare l’impatto di queste politiche e sostenere la tutela paritaria del diritto alla vita familiare.\n\nCordiali saluti"
    },
    "toast": {
     "copied": "Link copiato",
@@ -858,7 +858,7 @@
    },
    "how": {
     "title": "Comment vivre cette histoire",
-    "ready": "J’ai compris — commencer",
+    "ready": "J’ai compris, commencer",
     "steps": [
      "Choisissez l’une des deux identités.",
      "Prenez les décisions d’un couple sur douze ans.",
@@ -1015,7 +1015,7 @@
    "end": {
     "eyebrow": "Des années plus tard",
     "title": "Toujours là. Toujours ensemble.",
-    "aha": "Deux personnes, une famille — et une vie sans cesse divisée par les documents, les frontières et les autorisations.",
+    "aha": "Deux personnes, une famille, et une vie sans cesse divisée par les documents, les frontières et les autorisations.",
     "message": "Vos choix ont changé le parcours, mais aucun n’a supprimé l’inégalité de fond. Le poids vient du système, pas de la famille.",
     "disclaimer": "<b>Important :</b> cette expérience est éducative et militante ; elle ne constitue pas un conseil juridique. Nour est fictif ; les tendances et les cas réels reposent sur des documents publics. Les résultats individuels varient et des exceptions limitées peuvent s’appliquer. Sources vérifiées le 1er août 2026."
    },
@@ -1084,8 +1084,8 @@
     "nextVisitor": "Terminer et réinitialiser pour la prochaine personne"
    },
    "mail": {
-    "subject": "Le droit à la vie familiale — Un seul amour, deux identités",
-    "body": "Madame, Monsieur,\n\nJe viens de terminer une histoire interactive sur un couple palestinien — une personne résidente de Jérusalem et une personne portant une identité de Cisjordanie — qui essaie de vivre ensemble en famille.\n\nLa loi sur la citoyenneté et l’entrée limite le regroupement familial et peut rendre les familles dépendantes de permis temporaires, de renouvellements et d’exceptions. Je vous demande de soulever l’impact de ces politiques et de défendre une protection égale du droit à la vie familiale.\n\nCordialement"
+    "subject": "Le droit à la vie familiale : Un seul amour, deux identités",
+    "body": "Madame, Monsieur,\n\nJe viens de terminer une histoire interactive sur un couple palestinien, une personne résidente de Jérusalem et une personne portant une identité de Cisjordanie, qui essaie de vivre ensemble en famille.\n\nLa loi sur la citoyenneté et l’entrée limite le regroupement familial et peut rendre les familles dépendantes de permis temporaires, de renouvellements et d’exceptions. Je vous demande de soulever l’impact de ces politiques et de défendre une protection égale du droit à la vie familiale.\n\nCordialement"
    },
    "toast": {
     "copied": "Lien copié",
@@ -1228,7 +1228,7 @@
     "eyebrow": "قصة تفاعلية عن الحق في الحياة الأسرية",
     "title": "حبٌّ واحد،<br><span class=\"accent\">وهويّتان</span>",
     "lede": "وجدتما بعضكما على جانبي جدار. الآن حاولا بناء حياة عادية معاً، بينما تفرض هويتان قانونيتان مختلفتان شروطهما على كل قرار.",
-    "duration": "٣–٥ دقائق",
+    "duration": "٣ إلى ٥ دقائق",
     "mobile": "مصممة للهاتف",
     "noData": "لا نجمع بيانات شخصية",
     "context": "<b>قبل أن تبدأ:</b> يحمل الفلسطينيون في القدس الشرقية عادةً إقامة دائمة إسرائيلية، بينما يحمل الفلسطينيون في الضفة الغربية هوية صادرة عن السلطة الفلسطينية. المسافة قصيرة، لكن قواعد الحركة والإقامة والحياة الأسرية ليست متساوية.",
@@ -1244,7 +1244,7 @@
    },
    "how": {
     "title": "كيف تعيش القصة؟",
-    "ready": "فهمت — ابدأ",
+    "ready": "فهمت، ابدأ",
     "steps": [
      "اختر واحدة من الهويتين.",
      "اتخذ قرارات زوجين خلال اثني عشر عاماً.",
@@ -1470,7 +1470,7 @@
     "nextVisitor": "إنهاء وإعادة التجربة للزائر التالي"
    },
    "mail": {
-    "subject": "الحق في الحياة الأسرية — حب واحد وهويتان",
+    "subject": "الحق في الحياة الأسرية: حب واحد وهويتان",
     "body": "حضرة الممثل/ة المحترم/ة،\n\nأنهيت تجربة تفاعلية عن زوجين فلسطينيين، أحدهما يحمل إقامة القدس والآخر هوية الضفة الغربية، ويحاولان العيش معاً كأسرة.\n\nيقيّد قانون المواطنة والدخول لمّ الشمل، وقد يترك الأسر معتمدة على تصاريح مؤقتة وتجديدات واستثناءات. أطلب منكم إثارة أثر هذه السياسات ودعم الحماية المتساوية للحق في الحياة الأسرية.\n\nمع الاحترام"
    },
    "toast": {
