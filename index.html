@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;background:#E9ECF1;font-family:Barlow,system-ui,sans-serif;color:#0F1B33;-webkit-font-smoothing:antialiased}
+html[lang="ar"] body,html[lang="ar"] button,html[lang="ar"] [data-serif]{font-family:"IBM Plex Sans Arabic",Barlow,system-ui,sans-serif !important;letter-spacing:0 !important}
+html[lang="ar"] [data-latin-tight]{line-height:1.2 !important;letter-spacing:0 !important}
+button{font-family:inherit;color:inherit}
+a{color:#00807A}a:hover{color:#002858}
+.accent{color:#00B0A8}
+:focus-visible{outline:3px solid #00B0A8;outline-offset:3px}
+input[type=range].olti{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;margin:0;cursor:grab}
+input[type=range].olti::-webkit-slider-runnable-track{height:4px;background:#C9CFD9;border-radius:2px}
+input[type=range].olti::-moz-range-track{height:4px;background:#C9CFD9;border-radius:2px}
+input[type=range].olti::-webkit-slider-thumb{-webkit-appearance:none;width:36px;height:36px;margin-top:-16px;border-radius:50%;background:#002858;border:3px solid #fff;box-shadow:0 4px 14px -4px rgba(0,40,88,.6)}
+input[type=range].olti::-moz-range-thumb{width:30px;height:30px;border-radius:50%;background:#002858;border:3px solid #fff}
+@keyframes olti-fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes olti-stamp{from{opacity:0;transform:rotate(-14deg) scale(1.6)}to{opacity:1;transform:rotate(-8deg) scale(1)}}
+@keyframes olti-pulse{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+</style>
+</helmet>
+<div dir="{{ dir }}" lang="{{ lang }}" style="min-height:100svh;display:flex;justify-content:center;background:#E9ECF1">
+<div style="width:100%;max-width:560px;min-height:100svh;background:#FAFAF7;display:flex;flex-direction:column;box-shadow:0 0 0 1px #DDE1E8">
+
+  <header style="position:sticky;top:0;z-index:20;background:rgba(250,250,247,.94);backdrop-filter:blur(10px);border-bottom:1px solid #E3E6EC">
+    <div style="display:flex;align-items:center;gap:12px;padding:10px 16px">
+      <img src="assets/yplus-logo.png" alt="Y+" style="height:26px;width:auto;display:block">
+      <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#5B6578">{{ brand }}</span>
+      <sc-if value="{{ isKiosk }}" hint-placeholder-val="{{ false }}"><span style="margin-inline-start:auto;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#00807A;border:1px solid #00B0A8;border-radius:4px;padding:3px 7px">{{ t.modeKiosk }}</span></sc-if>
+      <div role="group" aria-label="Language" style="margin-inline-start:auto;display:flex;gap:2px;background:#E9ECF1;border-radius:6px;padding:2px">
+        <sc-for list="{{ langs }}" as="l" hint-placeholder-count="4">
+          <button type="button" onClick="{{ l.pick }}" aria-pressed="{{ l.active }}" style="min-height:32px;min-width:38px;padding:0 9px;border:0;border-radius:4px;font-size:12px;font-weight:700;cursor:pointer;background:{{ l.bg }};color:{{ l.fg }}" style-hover="color:#002858">{{ l.label }}</button>
+        </sc-for>
+      </div>
+    </div>
+    <sc-if value="{{ inStory }}" hint-placeholder-val="{{ false }}">
+      <div style="padding:8px 16px 10px;border-top:1px solid #E3E6EC;background:#FFFFFF">
+        <button type="button" onClick="{{ togglePath }}" aria-expanded="{{ pathOpen }}" style="width:100%;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:0;border:0;background:transparent;text-align:start;font-size:12px;font-weight:600;color:#0F1B33;cursor:pointer">
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:4px;background:{{ youBg }};color:#fff;font-weight:700">{{ t.common.you }} · {{ youPlace }}</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:4px;background:{{ nourBg }};color:#fff;font-weight:700">{{ t.common.nour }} · {{ nourPlace }}</span>
+          <span style="margin-inline-start:auto;color:#5B6578;white-space:nowrap">{{ yearLabel }} · {{ livingLabel }} · <b style="color:#0F1B33">{{ costCount }}</b> {{ t.badge.tracker }} <span aria-hidden="true" style="display:inline-block;transition:transform .2s;transform:{{ pathChevron }}">▾</span></span>
+        </button>
+        <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ progress }}" aria-label="Story progress" style="margin-top:8px;height:3px;background:#E3E6EC;border-radius:2px;overflow:hidden"><div style="height:100%;width:{{ progressPct }};background:#00B0A8;transition:width .4s"></div></div>
+        <sc-if value="{{ pathOpen }}" hint-placeholder-val="{{ false }}">
+          <ol style="margin:10px 0 0;padding:0;list-style:none;display:grid;gap:6px;animation:olti-fade .25s both">
+            <sc-for list="{{ pathItems }}" as="p" hint-placeholder-count="2">
+              <li style="display:flex;gap:10px;align-items:baseline;font-size:13px;line-height:1.4"><span style="flex:none;min-width:44px;font-weight:800;color:#00B0A8">{{ p.year }}</span><span style="color:#0F1B33">{{ p.text }}</span></li>
+            </sc-for>
+          </ol>
+        </sc-if>
+      </div>
+    </sc-if>
+  </header>
+
+  <main style="flex:1;display:flex;flex-direction:column">
+
+  <sc-if value="{{ inIntro }}" hint-placeholder-val="{{ true }}">
+    <section data-screen-label="Landing" style="display:flex;flex-direction:column;gap:22px;padding:28px 20px 40px;animation:olti-fade .4s both">
+      <div>
+        <div style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#00807A;margin-bottom:12px">{{ t.intro.eyebrow }}</div>
+        <h1 data-latin-tight style="margin:0;font-size:clamp(46px,13vw,76px);line-height:.92;letter-spacing:-.03em;font-weight:800;color:#002858;text-wrap:balance">{{ titleRich }}</h1>
+        <p data-serif style="margin:18px 0 0;font-family:'Source Serif 4',Georgia,serif;font-size:clamp(19px,4.6vw,23px);line-height:1.4;color:#0F1B33;max-width:36ch;text-wrap:pretty">{{ t.intro.lede }}</p>
+      </div>
+      <div style="background:#E6F7F6;border-radius:8px;padding:14px 16px;font-size:14px;line-height:1.55;color:#0F1B33">{{ contextRich }}</div>
+      <div>
+        <button type="button" onClick="{{ toggleHow }}" aria-expanded="{{ howOpen }}" style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 4px;border:0;background:transparent;font-size:15px;font-weight:700;color:#002858;cursor:pointer;text-decoration:underline;text-underline-offset:4px;text-decoration-color:#00B0A8">{{ howLabel }}</button>
+        <sc-if value="{{ howOpen }}" hint-placeholder-val="{{ false }}">
+          <ol style="margin:8px 0 0;padding:0;list-style:none;display:grid;gap:8px;animation:olti-fade .3s both">
+            <sc-for list="{{ howSteps }}" as="s" hint-placeholder-count="4">
+              <li style="display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.45;padding:10px 12px;background:#fff;border:1px solid #E3E6EC;border-radius:8px"><span style="flex:none;width:24px;height:24px;border-radius:50%;background:#002858;color:#fff;font-size:12px;font-weight:800;display:grid;place-items:center">{{ s.n }}</span><span>{{ s.text }}</span></li>
+            </sc-for>
+          </ol>
+        </sc-if>
+      </div>
+      <div>
+        <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#5B6578;margin-bottom:12px">{{ t.intro.question }}</div>
+        <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px">
+          <sc-for list="{{ idCards }}" as="card" hint-placeholder-count="2">
+            <div style="perspective:1000px;min-height:230px">
+              <div style="position:relative;width:100%;height:230px;transition:transform .55s cubic-bezier(.2,.7,.2,1);transform-style:preserve-3d;transform:{{ card.transform }}">
+                <button type="button" onClick="{{ card.flip }}" aria-label="{{ card.title }} — {{ t.scenes.flip }}" style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;text-align:start;cursor:pointer;border:0;border-radius:12px;padding:16px 14px 14px;display:flex;flex-direction:column;gap:8px;background:{{ card.bg }};color:#fff;box-shadow:0 12px 30px -18px rgba(0,40,88,.6)">
+                  <span style="display:flex;align-items:center;justify-content:space-between;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;opacity:.9"><span>{{ card.chip }}</span><span aria-hidden="true" style="width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:15px;line-height:1">↻</span></span>
+                  <span style="font-size:22px;font-weight:800;line-height:1.05;letter-spacing:-.01em;margin-top:auto">{{ card.title }}</span>
+                  <span style="font-size:13px;line-height:1.45;opacity:.92">{{ card.desc }}</span>
+                  <span style="margin-top:4px;font-size:11px;font-weight:700;opacity:.85">{{ t.scenes.flip }}</span>
+                </button>
+                <div style="position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:6px;background:#fff;border:2px solid {{ card.solid }};box-shadow:0 12px 30px -18px rgba(0,40,88,.4)">
+                  <button type="button" onClick="{{ card.flip }}" aria-label="{{ t.scenes.howClose }}" style="align-self:flex-start;border:0;background:transparent;padding:0;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:{{ card.solid }};cursor:pointer;min-height:24px">{{ card.chip }} ↻</button>
+                  <sc-for list="{{ card.back }}" as="row" hint-placeholder-count="3">
+                    <div style="font-size:11.5px;line-height:1.35"><div style="font-weight:800;color:#5B6578;font-size:10px;letter-spacing:.06em;text-transform:uppercase">{{ row.k }}</div><div style="color:#0F1B33">{{ row.v }}</div></div>
+                  </sc-for>
+                  <button type="button" onClick="{{ card.start }}" style="margin-top:auto;min-height:40px;border:0;border-radius:6px;background:{{ card.solid }};color:#fff;font-size:13px;font-weight:800;cursor:pointer">{{ t.scenes.carry }} →</button>
+                </div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <p style="margin:0;font-size:12.5px;line-height:1.55;color:#5B6578;text-wrap:pretty">{{ t.intro.note }}</p>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ inStory }}" hint-placeholder-val="{{ false }}">
+    <section data-screen-label="Story" style="display:flex;flex-direction:column;gap:20px;padding:24px 20px 40px;animation:olti-fade .4s both">
+      <div style="display:flex;align-items:baseline;gap:14px">
+        <span style="font-size:64px;line-height:.9;font-weight:800;letter-spacing:-.04em;color:#00B0A8">{{ yearNum }}</span>
+        <div>
+          <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#5B6578">{{ yearLabel }} · {{ chapterCount }}</div>
+          <h2 style="margin:4px 0 0;font-size:26px;line-height:1.1;font-weight:800;color:#002858;letter-spacing:-.01em">{{ chapter.title }}</h2>
+        </div>
+      </div>
+      <div data-serif style="font-family:'Source Serif 4',Georgia,serif;font-size:19px;line-height:1.55;color:#0F1B33;text-wrap:pretty">{{ storyRich }}</div>
+
+      <div style="background:#fff;border:1px solid #E3E6EC;border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:10px"><div style="font-size:15px;font-weight:800;color:#002858">{{ scene.title }}</div><div style="font-size:12px;color:#5B6578;text-align:end">{{ scene.hint }}</div></div>
+
+        <sc-if value="{{ scene.isDistance }}" hint-placeholder-val="{{ false }}">
+          <div style="position:relative;padding:34px 0 8px">
+            <div style="position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;font-size:11px;font-weight:700;color:#5B6578"><span style="color:{{ youColor }}">{{ t.scenes.distance.you }}</span><span>{{ t.scenes.distance.km }}</span><span style="color:{{ nourColor }}">{{ t.scenes.distance.nour }}</span></div>
+            <div aria-hidden="true" style="position:absolute;top:44px;left:calc(60% - 3px);width:6px;height:28px;background:#0F1B33;border-radius:1px;z-index:1"></div>
+            <div aria-hidden="true" style="position:absolute;top:80px;left:60%;transform:translateX(-50%);font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:800;color:#0F1B33;white-space:nowrap">{{ t.scenes.distance.wall }} · {{ t.scenes.distance.checkpoint }}</div>
+            <div style="position:relative;z-index:2"><input class="olti" type="range" min="0" max="100" value="{{ scene.pos }}" onChange="{{ scene.onSlide }}" onInput="{{ scene.onSlide }}" aria-label="{{ t.scenes.distance.hint }}"></div>
+            <div style="height:16px"></div>
+          </div>
+          <sc-if value="{{ scene.done }}" hint-placeholder-val="{{ false }}"><p style="margin:0;font-size:14.5px;font-weight:600;color:#002858;animation:olti-fade .3s both">{{ t.scenes.distance.done }}</p></sc-if>
+        </sc-if>
+
+        <sc-if value="{{ scene.isCalendar }}" hint-placeholder-val="{{ false }}">
+          <div style="position:relative">
+            <div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px">
+              <sc-for list="{{ scene.days }}" as="d" hint-placeholder-count="14">
+                <button type="button" onClick="{{ d.pick }}" aria-pressed="{{ d.on }}" style="aspect-ratio:1;min-height:40px;border-radius:6px;border:1.5px solid {{ d.border }};background:{{ d.bg }};color:{{ d.fg }};font-size:14px;font-weight:700;cursor:pointer">{{ d.n }}</button>
+              </sc-for>
+            </div>
+            <sc-if value="{{ scene.done }}" hint-placeholder-val="{{ false }}"><div aria-hidden="true" style="position:absolute;inset:0;display:grid;place-items:center;pointer-events:none"><span style="animation:olti-stamp .4s cubic-bezier(.2,.8,.2,1) both;border:3px solid #B8412D;color:#B8412D;border-radius:6px;padding:6px 14px;font-size:16px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;background:rgba(255,255,255,.85);transform:rotate(-8deg)">{{ t.scenes.calendar.stamp }}</span></div></sc-if>
+          </div>
+          <sc-if value="{{ scene.done }}" hint-placeholder-val="{{ false }}"><p style="margin:0;font-size:14.5px;font-weight:600;color:#002858;animation:olti-fade .3s both">{{ t.scenes.calendar.done }}</p></sc-if>
+        </sc-if>
+
+        <sc-if value="{{ scene.isHousing }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;grid-template-columns:1fr 12px 1fr;gap:8px;align-items:stretch">
+            <button type="button" onClick="{{ scene.zoneJ.pick }}" disabled="{{ scene.locked }}" aria-pressed="{{ scene.zoneJ.on }}" style="min-height:120px;border-radius:10px;border:2px solid #2F6FD8;background:{{ scene.zoneJ.bg }};color:{{ scene.zoneJ.fg }};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer;font-size:14px;font-weight:800;opacity:{{ scene.zoneJ.opacity }}"><span aria-hidden="true" style="font-size:28px;line-height:1">{{ scene.zoneJ.icon }}</span>{{ t.scenes.housing.jerusalem }}</button>
+            <div aria-hidden="true" style="background:#0F1B33;border-radius:2px;position:relative"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-90deg);font-size:9px;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:#0F1B33;white-space:nowrap;background:#fff;padding:0 4px">{{ t.scenes.housing.wall }}</span></div>
+            <button type="button" onClick="{{ scene.zoneW.pick }}" disabled="{{ scene.locked }}" aria-pressed="{{ scene.zoneW.on }}" style="min-height:120px;border-radius:10px;border:2px solid #2F9E5B;background:{{ scene.zoneW.bg }};color:{{ scene.zoneW.fg }};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer;font-size:14px;font-weight:800;opacity:{{ scene.zoneW.opacity }}"><span aria-hidden="true" style="font-size:28px;line-height:1">{{ scene.zoneW.icon }}</span>{{ t.scenes.housing.westBank }}</button>
+            <button type="button" onClick="{{ scene.zoneA.pick }}" disabled="{{ scene.locked }}" aria-pressed="{{ scene.zoneA.on }}" style="grid-column:1/-1;min-height:52px;border-radius:10px;border:2px dashed #5B6578;background:{{ scene.zoneA.bg }};color:{{ scene.zoneA.fg }};display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;font-size:14px;font-weight:800;opacity:{{ scene.zoneA.opacity }}"><span aria-hidden="true" style="font-size:20px;line-height:1">{{ scene.zoneA.icon }}</span>{{ t.scenes.housing.apart }}</button>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ scene.isDocuments }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <sc-for list="{{ scene.docs }}" as="d" hint-placeholder-count="5">
+              <button type="button" onClick="{{ d.pick }}" aria-pressed="{{ d.on }}" style="min-height:44px;padding:0 14px;border-radius:6px;border:1.5px solid {{ d.border }};background:{{ d.bg }};color:{{ d.fg }};font-size:14px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .15s"><span aria-hidden="true" style="font-size:12px">{{ d.mark }}</span>{{ d.text }}</button>
+            </sc-for>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:8px;background:#F0F2F6">
+            <div style="flex:none;width:44px;height:56px;border-radius:4px;background:#fff;border:1.5px solid #C9CFD9;position:relative;overflow:hidden"><div style="position:absolute;bottom:0;left:0;right:0;height:{{ scene.fill }};background:#002858;transition:height .3s"></div></div>
+            <div style="font-size:13px;color:#5B6578;line-height:1.4"><div style="font-weight:800;color:#002858;font-size:12px;letter-spacing:.1em;text-transform:uppercase">{{ scene.docCount }}</div>
+              <sc-if value="{{ scene.done }}" hint-placeholder-val="{{ false }}"><div style="font-size:15px;color:#0F1B33;animation:olti-fade .3s both">{{ t.scenes.documents.waiting }}: <b style="color:#B8412D">{{ monthsTicker }}</b> {{ t.scenes.documents.months }}</div></sc-if>
+            </div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ scene.isForm }}" hint-placeholder-val="{{ false }}">
+          <div style="display:grid;gap:6px">
+            <sc-for list="{{ scene.fields }}" as="f" hint-placeholder-count="5">
+              <button type="button" onClick="{{ f.pick }}" aria-pressed="{{ f.on }}" style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:10px;align-items:center;text-align:start;min-height:44px;padding:8px 12px;border-radius:6px;border:1.5px solid {{ f.border }};background:{{ f.bg }};cursor:pointer"><span style="font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:800;color:#5B6578">{{ f.label }}</span><span style="font-size:14px;font-weight:700;color:{{ f.fg }};border-bottom:1.5px solid {{ f.line }};padding-bottom:2px;min-height:18px;animation:{{ f.anim }}">{{ f.value }}</span></button>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ scene.isClock }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;align-items:center;gap:16px">
+            <div style="font-size:56px;line-height:1;font-weight:800;letter-spacing:-.03em;color:#002858;font-variant-numeric:tabular-nums">{{ clockTicker }}</div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#B8412D;animation:olti-pulse 1.2s infinite"></div>
+          </div>
+        </sc-if>
+
+        <sc-if value="{{ scene.isTimeline }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;gap:6px">
+            <sc-for list="{{ scene.years }}" as="y" hint-placeholder-count="6">
+              <button type="button" onClick="{{ y.pick }}" aria-pressed="{{ y.on }}" style="flex:1;min-height:44px;border-radius:6px;border:1.5px solid {{ y.border }};background:{{ y.bg }};color:{{ y.fg }};font-size:14px;font-weight:800;cursor:pointer">{{ y.n }}</button>
+            </sc-for>
+          </div>
+          <div style="padding:12px 14px;border-radius:8px;background:#F0F2F6;font-size:14px;line-height:1.45"><b style="color:#002858">{{ scene.memTitle }}</b><br>{{ scene.memText }}</div>
+        </sc-if>
+      </div>
+
+      <sc-if value="{{ choicesVisible }}" hint-placeholder-val="{{ true }}">
+        <div style="display:grid;gap:10px;animation:olti-fade .35s both">
+          <sc-for list="{{ choices }}" as="c" hint-placeholder-count="2">
+            <button type="button" onClick="{{ c.pick }}" disabled="{{ c.disabled }}" aria-pressed="{{ c.active }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:start;min-height:56px;padding:14px 16px;border-radius:8px;font-size:16px;font-weight:600;line-height:1.3;cursor:pointer;transition:background .15s,opacity .15s;border:1.5px solid {{ c.border }};background:{{ c.bg }};color:{{ c.fg }};opacity:{{ c.opacity }}" style-hover="background:#F0F2F6"><span>{{ c.text }}</span><span aria-hidden="true" style="flex:none;font-size:18px">{{ c.arrow }}</span></button>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ hasPicked }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:12px;animation:olti-fade .35s both">
+          <div style="background:#002858;color:#fff;border-radius:10px;padding:18px 18px 20px">
+            <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#7FD9D4;margin-bottom:8px">{{ t.badge.picked }}: {{ pickedLog }}</div>
+            <p data-serif style="margin:0;font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.5;text-wrap:pretty">{{ consequence }}</p>
+          </div>
+          <sc-if value="{{ hasFact }}" hint-placeholder-val="{{ false }}">
+            <div style="background:#E6F7F6;border-radius:10px;padding:16px 18px 18px">
+              <div style="display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#00807A;margin-bottom:8px"><span style="width:8px;height:8px;border-radius:50%;background:#00B0A8"></span>{{ t.common.documented }}</div>
+              <p style="margin:0;font-size:15px;line-height:1.55;color:#0F1B33;text-wrap:pretty">{{ fact }}</p>
+              <div style="margin-top:10px;font-size:12px;color:#5B6578">{{ t.badge.sourceLabel }}: <a href="{{ factSourceUrl }}" target="_blank" rel="noopener" style="font-weight:600">{{ factSourceName }}</a> · {{ sourceCheckedLabel }}</div>
+            </div>
+          </sc-if>
+          <button type="button" onClick="{{ next }}" style="min-height:56px;border:0;border-radius:8px;background:#00B0A8;color:#002858;font-size:17px;font-weight:800;cursor:pointer;letter-spacing:.01em" style-hover="background:#00C4BB">{{ nextLabel }}</button>
+        </div>
+      </sc-if>
+      <button type="button" onClick="{{ reset }}" style="align-self:flex-start;margin-top:8px;min-height:44px;padding:0 4px;border:0;background:transparent;font-size:13px;font-weight:600;color:#5B6578;cursor:pointer;text-decoration:underline;text-underline-offset:3px">← {{ t.intro.eyebrow }}</button>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ inEnd }}" hint-placeholder-val="{{ false }}">
+    <section data-screen-label="Ending" style="display:flex;flex-direction:column;gap:28px;padding:28px 20px 48px;animation:olti-fade .4s both">
+      <div>
+        <div style="font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#00807A;margin-bottom:10px">{{ t.end.eyebrow }}</div>
+        <h2 style="margin:0;font-size:clamp(34px,9vw,48px);line-height:1;font-weight:800;color:#002858;letter-spacing:-.02em;text-wrap:balance">{{ t.end.title }}</h2>
+        <p data-serif style="margin:16px 0 0;font-family:'Source Serif 4',Georgia,serif;font-size:19px;line-height:1.45;color:#0F1B33;text-wrap:pretty">{{ t.end.aha }}</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px">
+        <div style="background:#fff;border:1px solid #E3E6EC;border-radius:10px;padding:14px"><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#5B6578">{{ t.summary.together }}</div><div style="margin-top:6px;font-size:17px;font-weight:800;color:#002858;line-height:1.2">{{ t.summary.years }}</div></div>
+        <div style="background:#fff;border:1px solid #E3E6EC;border-radius:10px;padding:14px"><div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#5B6578">{{ t.summary.living }}</div><div style="margin-top:6px;font-size:17px;font-weight:800;color:#002858;line-height:1.2">{{ livingLabel }}</div></div>
+        <div style="grid-column:1/-1;background:#fff;border:1px solid #E3E6EC;border-radius:10px;padding:14px">
+          <div style="font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#5B6578">{{ t.summary.cost }} · {{ costCount }} {{ t.summary.choices }}</div>
+          <ol style="margin:12px 0 0;padding:0;list-style:none;display:grid;gap:0">
+            <sc-for list="{{ pathItems }}" as="p" hint-placeholder-count="3">
+              <li style="display:grid;grid-template-columns:44px 14px minmax(0,1fr);gap:8px;align-items:start;font-size:14px;line-height:1.4;color:#0F1B33">
+                <span style="font-weight:800;color:#00B0A8;padding-top:1px">{{ p.year }}</span>
+                <span aria-hidden="true" style="position:relative;height:100%;min-height:34px"><span style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:8px;height:8px;border-radius:50%;background:#002858"></span><span style="position:absolute;top:16px;bottom:-8px;left:50%;width:2px;transform:translateX(-50%);background:{{ p.line }}"></span></span>
+                <span style="padding-bottom:12px">{{ p.text }}</span>
+              </li>
+            </sc-for>
+          </ol>
+        </div>
+      </div>
+      <p style="margin:0;font-size:16px;line-height:1.55;color:#0F1B33;text-wrap:pretty">{{ t.end.message }}</p>
+
+      <div style="display:flex;align-items:center;gap:14px;background:#002858;border-radius:12px;padding:16px 18px;color:#fff">
+        <svg width="52" height="52" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="none" stroke="#00B0A8" stroke-width="3"/><path d="M16 27l7 7 14-15" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><div style="font-size:18px;font-weight:800;line-height:1.1">{{ t.badge.title }}</div><div style="margin-top:4px;font-size:12.5px;color:#B8C4D8">{{ t.badge.sub }}</div><div style="margin-top:2px;font-size:12.5px;color:#7FD9D4;font-weight:600">{{ t.badge.progress }}</div></div>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 8px;font-size:22px;font-weight:800;color:#002858;letter-spacing:-.01em">{{ t.reality.title }}</h3>
+        <p style="margin:0 0 14px;font-size:15px;line-height:1.5;color:#5B6578">{{ t.reality.intro }}</p>
+        <div style="display:grid;gap:10px">
+          <sc-for list="{{ t.reality.items }}" as="r" hint-placeholder-count="3">
+            <div style="background:#fff;border:1px solid #E3E6EC;border-radius:10px;padding:14px 16px"><div style="font-size:16px;font-weight:800;color:#002858">{{ r.title }}</div><p style="margin:6px 0 0;font-size:14.5px;line-height:1.5;color:#0F1B33">{{ r.text }}</p></div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="margin:0 0 8px;font-size:22px;font-weight:800;color:#002858;letter-spacing:-.01em">{{ t.realStories.title }}</h3>
+        <p style="margin:0 0 14px;font-size:15px;line-height:1.5;color:#5B6578">{{ t.realStories.intro }}</p>
+        <div style="display:grid;gap:10px">
+          <sc-for list="{{ realStories }}" as="s" hint-placeholder-count="3">
+            <a href="{{ s.url }}" target="_blank" rel="noopener" style="display:block;text-decoration:none;color:inherit;background:#E6F7F6;border-radius:10px;padding:16px 18px" style-hover="background:#D6F1EF">
+              <div style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#00807A">{{ s.tag }}</div>
+              <div style="margin-top:6px;font-size:17px;font-weight:800;color:#002858;line-height:1.2">{{ s.title }}</div>
+              <p style="margin:6px 0 10px;font-size:14.5px;line-height:1.5;color:#0F1B33">{{ s.text }}</p>
+              <span style="font-size:13px;font-weight:700;color:#00807A;text-decoration:underline;text-underline-offset:3px">{{ t.realStories.link }} ↗</span>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="background:#fff;border:1px solid #E3E6EC;border-radius:10px;padding:16px 18px">
+        <h3 style="margin:0 0 8px;font-size:18px;font-weight:800;color:#002858">{{ t.sources.title }}</h3>
+        <p style="margin:0 0 10px;font-size:13.5px;line-height:1.5;color:#5B6578">{{ t.sources.note }}</p>
+        <ul style="margin:0;padding:0;list-style:none;display:grid;gap:8px">
+          <sc-for list="{{ sourceItems }}" as="s" hint-placeholder-count="3"><li style="font-size:14px;line-height:1.5"><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.text }}</a></li></sc-for>
+        </ul>
+        <div style="margin-top:10px;font-size:12px;color:#5B6578">{{ sourceCheckedLabel }}</div>
+      </div>
+
+      <sc-if value="{{ isOnline }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <h3 style="margin:0 0 8px;font-size:22px;font-weight:800;color:#002858;letter-spacing:-.01em">{{ t.actions.title }}</h3>
+          <p style="margin:0 0 14px;font-size:15px;line-height:1.5;color:#5B6578">{{ t.actions.intro }}</p>
+          <div style="display:grid;gap:10px">
+            <button type="button" onClick="{{ email }}" style="min-height:56px;border:0;border-radius:8px;background:#00B0A8;color:#002858;font-size:17px;font-weight:800;cursor:pointer" style-hover="background:#00C4BB">{{ t.actions.email }}</button>
+            <button type="button" onClick="{{ share }}" style="min-height:56px;border:0;border-radius:8px;background:#002858;color:#fff;font-size:17px;font-weight:800;cursor:pointer" style-hover="background:#0B3A78">{{ t.actions.share }}</button>
+            <button type="button" onClick="{{ otherId }}" style="min-height:56px;border:1.5px solid #002858;border-radius:8px;background:transparent;color:#002858;font-size:17px;font-weight:800;cursor:pointer" style-hover="background:#F0F2F6">{{ t.actions.other }}</button>
+          </div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ isKiosk }}" hint-placeholder-val="{{ false }}">
+        <div style="display:grid;gap:10px">
+          <button type="button" onClick="{{ otherId }}" style="min-height:56px;border:1.5px solid #002858;border-radius:8px;background:transparent;color:#002858;font-size:17px;font-weight:800;cursor:pointer">{{ t.actions.other }}</button>
+          <button type="button" onClick="{{ resetToast }}" style="min-height:56px;border:0;border-radius:8px;background:#00B0A8;color:#002858;font-size:17px;font-weight:800;cursor:pointer">{{ t.actions.nextVisitor }}</button>
+        </div>
+      </sc-if>
+
+      <p style="margin:0;font-size:12.5px;line-height:1.55;color:#5B6578">{{ disclaimerRich }}</p>
+    </section>
+  </sc-if>
+  </main>
+
+  <footer style="margin-top:auto;background:#002858;color:#fff;padding:24px 20px 28px;display:flex;flex-direction:column;gap:18px">
+    <div style="display:flex;align-items:center;gap:12px"><img src="assets/yplus-logo.png" alt="Y+" style="height:28px;width:auto;background:#fff;border-radius:4px;padding:3px 5px"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#B8C4D8">Awareness → Understanding → Action</span></div>
+    <div style="display:flex;flex-wrap:wrap;gap:14px 8px;align-items:center">
+      <span style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#7FD9D4">{{ t.footer.follow }}</span>
+      <sc-for list="{{ social }}" as="s" hint-placeholder-count="4">
+        <a href="{{ s.url }}" target="_blank" rel="noopener" style="min-height:40px;display:inline-flex;align-items:center;padding:0 14px;border:1.5px solid rgba(255,255,255,.35);border-radius:999px;font-size:13px;font-weight:700;color:#fff;text-decoration:none" style-hover="background:#fff;color:#002858">{{ s.name }}</a>
+      </sc-for>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,.15);padding-top:16px">
+      <div style="font-size:14px;font-weight:600">{{ t.footer.story }} <a href="{{ contact.story }}" target="_blank" rel="noopener" style="color:#7FD9D4;font-weight:800;text-decoration:underline;text-underline-offset:3px">{{ t.footer.share }} ↗</a></div>
+      <div style="display:flex;gap:14px;font-size:13px"><a href="{{ contact.contact }}" target="_blank" rel="noopener" style="color:#fff;font-weight:600">{{ t.footer.contact }}</a><a href="{{ contact.site }}" target="_blank" rel="noopener" style="color:#B8C4D8;font-weight:600">yplus.ps</a></div>
+    </div>
+  </footer>
+
+  <sc-if value="{{ hasToast }}" hint-placeholder-val="{{ false }}">
+    <div role="status" aria-live="polite" style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#002858;color:#fff;padding:10px 16px;border-radius:6px;font-size:14px;font-weight:600;box-shadow:0 10px 30px -10px rgba(0,0,0,.4);z-index:50">{{ toast }}</div>
+  </sc-if>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;online&quot;,&quot;kiosk&quot;],&quot;default&quot;:&quot;online&quot;,&quot;tsType&quot;:&quot;'online'|'kiosk'&quot;,&quot;section&quot;:&quot;Deployment&quot;},&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;it&quot;,&quot;fr&quot;,&quot;ar&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Deployment&quot;},&quot;kioskIdleSeconds&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:240,&quot;min&quot;:30,&quot;max&quot;:900,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Deployment&quot;},&quot;siteUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Deployment&quot;}}">
+class Component extends DCLogic {
+  state = { data: null, lang: 'en', screen: 'intro', id: 'blue', step: 0, year: 0, living: 'apart', costs: [], picked: null, howOpen: false, pathOpen: false, toast: '', flipped: {}, sc: {} };
+  LANGS = [['en','EN'],['it','IT'],['fr','FR'],['ar','ع']];
+  constructor(p) {
+    super(p);
+    // Live tickers: kept as components so their timers survive re-renders
+    this.Months = () => { const [m, setM] = React.useState(1); React.useEffect(() => { const id = setInterval(() => setM(x => x + 1), 900); return () => clearInterval(id); }, []); return React.createElement('span', null, m); };
+    this.Clock = () => { const [s, setS] = React.useState(0); React.useEffect(() => { const id = setInterval(() => setS(x => x + 1), 1000); return () => clearInterval(id); }, []); const mm = String(Math.floor(s / 60)).padStart(2, '0'); return React.createElement('span', null, `03:${mm}:${String(s % 60).padStart(2, '0')}`); };
+  }
+  componentDidMount() {
+    fetch('toolkit-data.json', { cache: 'no-store' }).then(r => r.json()).then(data => {
+      const q = new URLSearchParams(location.search).get('lang');
+      let saved = null; try { saved = localStorage.getItem('olti_lang'); } catch (e) {}
+      const lang = [q, this.props.defaultLang, saved].find(l => l && data.i18n[l]) || 'en';
+      this.setState({ data, lang }, () => { this.applyLang(); this.track('load'); });
+    });
+    this.idle = () => {
+      clearTimeout(this.idleTimer);
+      if (this.mode() !== 'kiosk') return;
+      this.idleTimer = setTimeout(() => { if (this.state.screen !== 'intro') this.doReset(false); }, (this.props.kioskIdleSeconds ?? 240) * 1000);
+    };
+    ['click', 'touchstart', 'keydown'].forEach(e => window.addEventListener(e, this.idle, { passive: true }));
+    this.idle();
+  }
+  componentWillUnmount() { clearTimeout(this.idleTimer); ['click', 'touchstart', 'keydown'].forEach(e => window.removeEventListener(e, this.idle)); }
+  mode() { return this.props.mode ?? 'online'; }
+  applyLang() { document.documentElement.lang = this.state.lang; document.documentElement.dir = this.state.lang === 'ar' ? 'rtl' : 'ltr'; const t = this.t(); if (t) document.title = t.intro.title.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(); }
+  t() { return this.state.data ? this.state.data.i18n[this.state.lang] : null; }
+  track(ev, d = {}) { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'olti_' + ev, language: this.state.lang, mode: this.mode(), ...d }); }
+  rich(html) { return html ? React.createElement('span', { dangerouslySetInnerHTML: { __html: html } }) : null; }
+  toastMsg(m) { this.setState({ toast: m }); clearTimeout(this.toastT); this.toastT = setTimeout(() => this.setState({ toast: '' }), 2400); }
+  top() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  setLang(lang) { try { localStorage.setItem('olti_lang', lang); } catch (e) {} this.setState({ lang }, () => { this.applyLang(); this.track('language_change'); }); }
+  start(id) { this.setState({ id, screen: 'story', step: 0, year: 0, living: 'apart', costs: [], picked: null, pathOpen: false, flipped: {}, sc: {} }, () => { this.top(); this.track('story_start', { selected_id: id }); }); }
+  doReset(toast) { this.setState({ screen: 'intro', step: 0, year: 0, living: 'apart', costs: [], picked: null, howOpen: false, pathOpen: false, flipped: {}, sc: {} }, () => { this.top(); if (toast) this.toastMsg(this.t().toast.reset); this.track('reset'); }); }
+  sc(patch) { this.setState(s => ({ sc: { ...s.sc, ...patch } })); }
+  pick(i) {
+    if (this.state.picked != null) return;
+    const ch = this.t().chapters[this.state.step].choices[i];
+    this.setState(s => ({ picked: i, living: ch.living || s.living, costs: [...s.costs, { chapter: s.step, choice: i }] }), () => this.track('choice', { chapter: this.state.step, choice: i }));
+  }
+  next() {
+    const ch = this.t().chapters[this.state.step].choices[this.state.picked];
+    if (ch.next === 'end') return this.finish();
+    this.setState({ step: ch.next, picked: null, year: this.t().chapters[ch.next].year, sc: {} }, this.top);
+  }
+  finish() {
+    this.setState({ screen: 'end', year: 12 }, this.top);
+    this.track('story_complete', { selected_id: this.state.id, choices: this.state.costs.length });
+    try {
+      const rw = this.state.data.reward, badges = JSON.parse(localStorage.getItem(rw.badgeStorage) || '[]');
+      if (!badges.includes(rw.badgeId)) { badges.push(rw.badgeId); localStorage.setItem(rw.badgeStorage, JSON.stringify(badges)); this.track('badge_earned'); }
+      const w = JSON.parse(localStorage.getItem(rw.progressStorage) || '[]'); if (!w.includes(rw.toolId)) { w.push(rw.toolId); localStorage.setItem(rw.progressStorage, JSON.stringify(w)); }
+    } catch (e) {}
+  }
+  action(kind) { this.track('action_started', { kind }); try { const k = this.state.data.reward.actionStorage; localStorage.setItem(k, String(+(localStorage.getItem(k) || 0) + 1)); } catch (e) {} }
+  email() { this.action('email'); const m = this.t().mail; location.href = `mailto:?subject=${encodeURIComponent(m.subject)}&body=${encodeURIComponent(m.body)}`; this.track('email_action'); }
+  async share() {
+    this.action('share'); const url = this.props.siteUrl || location.href.split('?')[0];
+    const data = { title: document.title, text: this.t().intro.lede, url };
+    try { if (navigator.share) { await navigator.share(data); this.track('share_native'); return; } } catch (e) { return; }
+    try { await navigator.clipboard.writeText(url); this.toastMsg(this.t().toast.copied); this.track('share_copy'); } catch (e) {}
+  }
+  buildScene(t, s) {
+    const type = this.state.data.meta.sceneMap[s.step] || 'none', S = t.scenes, sc = s.sc, base = { title: S[type] ? S[type].title : '', hint: S[type] ? S[type].hint : '' };
+    const on = { border: '#002858', bg: '#002858', fg: '#fff' }, off = { border: '#C9CFD9', bg: '#fff', fg: '#0F1B33' };
+    if (type === 'distance') { const pos = sc.pos ?? 0; return { ...base, isDistance: true, pos, done: pos >= 97, onSlide: e => this.sc({ pos: +e.target.value }) }; }
+    if (type === 'calendar') { const picks = sc.days || []; const done = picks.length >= 2; return { ...base, isCalendar: true, done, days: Array.from({ length: 14 }, (_, i) => { const n = i + 1, o = picks.includes(n); return { n, on: o, ...(o ? on : off), pick: () => { if (done || o) return; this.sc({ days: [...picks, n] }); } }; }) }; }
+    if (type === 'housing') { const z = (i, key) => { const o = s.picked === i, dim = s.picked != null && !o; return { on: o, icon: o ? '⌂' : '○', bg: o ? '#002858' : (key === 'j' ? '#EAF1FC' : key === 'w' ? '#EAF6EE' : '#fff'), fg: o ? '#fff' : '#0F1B33', opacity: dim ? .4 : 1, pick: () => this.pick(i) }; }; return { ...base, isHousing: true, locked: s.picked != null, zoneJ: z(0, 'j'), zoneW: z(1, 'w'), zoneA: z(2, 'a') }; }
+    if (type === 'documents') { const got = sc.docs || []; const items = S.documents.items; const done = got.length >= items.length; return { ...base, isDocuments: true, done, fill: Math.round(got.length / items.length * 100) + '%', docCount: `${got.length} / ${items.length}`, docs: items.map((text, i) => { const o = got.includes(i); return { text, on: o, mark: o ? '✓' : '+', ...(o ? on : off), pick: () => { if (!o) this.sc({ docs: [...got, i] }); } }; }) }; }
+    if (type === 'form') { const got = sc.fields || []; const f = S.form.fields; const done = got.length >= f.length; return { ...base, isForm: true, done, fields: f.map(([label, val], i) => { const o = got.includes(i), last = i === f.length - 1; return { label, on: o, value: o ? val : '', fg: o && last ? '#B8412D' : '#0F1B33', border: o ? '#C9CFD9' : '#E3E6EC', bg: o ? '#fff' : '#F7F8FA', line: o ? 'transparent' : '#C9CFD9', anim: o ? 'olti-fade .3s both' : 'none', pick: () => { if (!o) this.sc({ fields: [...got, i] }); } }; }) }; }
+    if (type === 'clock') return { ...base, isClock: true, done: true };
+    if (type === 'timeline') { const past = s.costs.slice(); const sel = sc.year ?? (past.length - 1); const chOf = c => t.chapters[c.chapter]; return { ...base, isTimeline: true, done: true, years: past.map((c, i) => { const o = i === sel; return { n: chOf(c).year, on: o, ...(o ? on : off), pick: () => this.sc({ year: i }) }; }), memTitle: past[sel] ? chOf(past[sel]).title : '', memText: past[sel] ? chOf(past[sel]).choices[past[sel].choice].log : '' }; }
+    return { ...base, done: true };
+  }
+  renderVals() {
+    const s = this.state, t = this.t(), data = s.data;
+    const isKiosk = this.mode() === 'kiosk';
+    const base = { dir: s.lang === 'ar' ? 'rtl' : 'ltr', lang: s.lang, brand: data ? data.meta.brand : 'YPlus · Communicating Palestine', isKiosk, isOnline: !isKiosk,
+      langs: this.LANGS.map(([code, label]) => ({ label, active: s.lang === code, bg: s.lang === code ? '#002858' : 'transparent', fg: s.lang === code ? '#fff' : '#5B6578', pick: () => this.setLang(code) })),
+      inIntro: s.screen === 'intro', inStory: s.screen === 'story', inEnd: s.screen === 'end', hasToast: !!s.toast, toast: s.toast, t: t || {}, scene: {}, idCards: [], contact: data ? data.meta.contact : {}, social: data ? data.meta.contact.social.map(([name, url]) => ({ name, url })) : [] };
+    if (!t) return base;
+    const blue = s.id === 'blue';
+    const chapter = t.chapters[s.step], ch = s.picked != null ? chapter.choices[s.picked] : null;
+    const livingLabel = { apart: t.common.livingApart, jerusalem: t.common.livingJerusalem, westBank: t.common.livingWestBank }[s.living];
+    const cons = ch ? (blue ? ch.consequenceBlue : ch.consequenceGreen) || ch.consequence : '';
+    const src = data.sources, srcMap = [{ url: src.law, name: 'Knesset' }, { url: src.hamokedDelay, name: 'HaMoked' }, { url: src.btselemResidency, name: "B'Tselem" }];
+    const factSrc = [src.law, src.btselemFamilies, src.law, src.law, src.hamokedChildren, src.btselemFamilies, src.btselemFamilies][s.step] || src.law;
+    const factName = factSrc.includes('knesset') ? 'Knesset' : factSrc.includes('hamoked') ? 'HaMoked' : "B'Tselem";
+    const progress = Math.round(s.step / (t.chapters.length - 1) * 100);
+    const scene = this.buildScene(t, s);
+    const pathItems = s.costs.map((c, i) => ({ year: `${t.common.year} ${t.chapters[c.chapter].year}`, text: t.chapters[c.chapter].choices[c.choice].log, line: i === s.costs.length - 1 ? 'transparent' : '#C9CFD9' }));
+    const cardDefs = [['blue', '#2F6FD8', 'linear-gradient(160deg,#2F6FD8,#1E4FB8)'], ['green', '#2F9E5B', 'linear-gradient(160deg,#2F9E5B,#1F7A44)']];
+    return { ...base, t, scene,
+      idCards: cardDefs.map(([k, solid, bg]) => ({ chip: t.intro[k + 'Chip'], title: t.intro[k + 'Title'], desc: t.intro[k + 'Desc'], solid, bg, transform: s.flipped[k] ? 'rotateY(180deg)' : 'rotateY(0deg)', back: t.scenes.back[k].map(([kk, v]) => ({ k: kk, v })), flip: () => this.setState(x => ({ flipped: { ...x.flipped, [k]: !x.flipped[k] } })), start: () => this.start(k) })),
+      titleRich: this.rich(t.intro.title), contextRich: this.rich(t.intro.context), disclaimerRich: this.rich(t.end.disclaimer), storyRich: this.rich(chapter.text),
+      howOpen: s.howOpen, howLabel: s.howOpen ? t.badge.howClose : t.intro.how, toggleHow: () => { this.setState(x => ({ howOpen: !x.howOpen })); if (!s.howOpen) this.track('how_open'); },
+      howSteps: t.how.steps.map((text, i) => ({ n: i + 1, text })),
+      pathOpen: s.pathOpen, pathChevron: s.pathOpen ? 'rotate(180deg)' : 'rotate(0deg)', togglePath: () => this.setState(x => ({ pathOpen: !x.pathOpen })), pathItems,
+      youBg: blue ? '#1E4FB8' : '#1F7A44', nourBg: blue ? '#1F7A44' : '#1E4FB8', youColor: blue ? '#1E4FB8' : '#1F7A44', nourColor: blue ? '#1F7A44' : '#1E4FB8',
+      youPlace: blue ? t.common.jerusalem : t.common.westBank, nourPlace: blue ? t.common.westBank : t.common.jerusalem,
+      yearLabel: `${t.common.year} ${s.screen === 'end' ? 12 : chapter.year}`, yearNum: String(chapter.year).padStart(2, '0'), chapterCount: `${s.step + 1}/${t.chapters.length}`,
+      livingLabel, costCount: s.costs.length, progress, progressPct: progress + '%',
+      monthsTicker: scene.isDocuments && scene.done ? React.createElement(this.Months) : null, clockTicker: scene.isClock ? React.createElement(this.Clock) : null,
+      choicesVisible: !!scene.done && !scene.isHousing,
+      chapter, hasPicked: ch != null, pickedLog: ch ? ch.log : '', consequence: cons, hasFact: !!(ch && ch.fact), fact: ch ? ch.fact : '', factSourceUrl: factSrc, factSourceName: factName,
+      sourceCheckedLabel: `${({ en: 'Sources checked', it: 'Fonti verificate il', fr: 'Sources vérifiées le', ar: 'تم التحقق من المصادر في' })[s.lang]} ${data.meta.sourceChecked}`,
+      choices: chapter.choices.map((c, i) => { const active = s.picked === i, dim = s.picked != null && !active; return { text: c.text, pick: () => this.pick(i), disabled: s.picked != null, active, arrow: active ? '✓' : (s.lang === 'ar' ? '←' : '→'), border: active ? '#002858' : '#C9CFD9', bg: active ? '#002858' : '#fff', fg: active ? '#fff' : '#0F1B33', opacity: dim ? .45 : 1 }; }),
+      next: () => this.next(), nextLabel: ch && ch.next === 'end' ? t.common.finish : t.common.continue,
+      reset: () => this.doReset(false), resetToast: () => this.doReset(true), otherId: () => this.start(blue ? 'green' : 'blue'),
+      email: () => this.email(), share: () => this.share(),
+      realStories: t.realStories.items.map(i => ({ ...i, url: src[i.url], tag: t.common.documented })),
+      sourceItems: t.sources.items.map((text, i) => ({ text, url: srcMap[i].url })) };
+  }
+}
+</script>
+</body>
+</html>
