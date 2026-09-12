@@ -1,5 +1,11 @@
 # Analytics setup — One Love, Two IDs
 
+## Current setup (active)
+GA4 is wired **directly** with Measurement ID `G-NMEYZ7ZWB5` (gtag.js) — no Tag Manager needed. All `olti_*` events below are sent as GA4 events with their parameters. Only step 4 (register custom dimensions + key events in GA4) is still required.
+If you later want GTM, set the `gtmId` tweak — it takes over and GA4 is then configured inside GTM (steps 1–3).
+
+---
+
 ## 1. Create the containers
 1. analytics.google.com → Admin → Create property "Y+ Interactive" (or reuse the yplus.ps property) → Web data stream → copy the **Measurement ID** (`G-XXXXXXX`).
 2. tagmanager.google.com → Create container "Y+ Interactive" (Web) → copy the **Container ID** (`GTM-XXXXXXX`).
