@@ -313,11 +313,13 @@ input[type=range].olti::-moz-range-thumb{width:30px;height:30px;border-radius:50
 
   <footer style="margin-top:auto;background:#002858;color:#fff;padding:24px 20px 28px;display:flex;flex-direction:column;gap:18px">
     <div style="display:flex;align-items:center;gap:12px"><img src="assets/yplus-logo.png" alt="Y+" style="height:28px;width:auto;background:#fff;border-radius:4px;padding:3px 5px"><span data-latin style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#B8C4D8">Awareness → Understanding → Action</span></div>
-    <div style="display:flex;flex-wrap:wrap;gap:14px 8px;align-items:center">
+    <div style="display:flex;flex-direction:column;gap:10px">
       <span style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#7FD9D4">{{ t.footer.follow }}</span>
-      <sc-for list="{{ social }}" as="s" hint-placeholder-count="4">
-        <a href="{{ s.url }}" target="_blank" rel="noopener" style="min-height:40px;display:inline-flex;align-items:center;padding:0 14px;border:1.5px solid rgba(255,255,255,.35);border-radius:999px;font-size:13px;font-weight:700;color:#fff;text-decoration:none" style-hover="background:#fff;color:#002858">{{ s.name }}</a>
-      </sc-for>
+      <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px">
+        <sc-for list="{{ social }}" as="s" hint-placeholder-count="4">
+          <a href="{{ s.url }}" target="_blank" rel="noopener" style="min-height:40px;display:inline-flex;align-items:center;justify-content:center;padding:0 6px;border:1.5px solid rgba(255,255,255,.35);border-radius:999px;font-size:13px;font-weight:700;color:#fff;text-decoration:none;white-space:nowrap" style-hover="background:#fff;color:#002858">{{ s.name }}</a>
+        </sc-for>
+      </div>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,.15);padding-top:16px">
       <div style="font-size:14px;font-weight:600">{{ t.footer.story }} <a href="{{ contact.story }}" target="_blank" rel="noopener" style="color:#7FD9D4;font-weight:800;text-decoration:underline;text-underline-offset:3px">{{ t.footer.share }} ↗</a></div>
