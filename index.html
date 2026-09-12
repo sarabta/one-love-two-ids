@@ -329,7 +329,7 @@ input[type=range].olti::-moz-range-thumb{width:30px;height:30px;border-radius:50
 </div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;gtmId&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Analytics&quot;},&quot;mode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;online&quot;,&quot;kiosk&quot;],&quot;default&quot;:&quot;online&quot;,&quot;tsType&quot;:&quot;'online'|'kiosk'&quot;,&quot;section&quot;:&quot;Deployment&quot;},&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;it&quot;,&quot;fr&quot;,&quot;ar&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Deployment&quot;},&quot;kioskIdleSeconds&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:240,&quot;min&quot;:30,&quot;max&quot;:900,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Deployment&quot;},&quot;siteUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Deployment&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;gaId&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;G-NMEYZ7ZWB5&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Analytics&quot;},&quot;gtmId&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Analytics&quot;},&quot;mode&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;online&quot;,&quot;kiosk&quot;],&quot;default&quot;:&quot;online&quot;,&quot;tsType&quot;:&quot;'online'|'kiosk'&quot;,&quot;section&quot;:&quot;Deployment&quot;},&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;it&quot;,&quot;fr&quot;,&quot;ar&quot;],&quot;default&quot;:&quot;en&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Deployment&quot;},&quot;kioskIdleSeconds&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:240,&quot;min&quot;:30,&quot;max&quot;:900,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Deployment&quot;},&quot;siteUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Deployment&quot;}}">
 class Component extends DCLogic {
   state = { data: null, lang: 'en', screen: 'intro', id: 'blue', step: 0, year: 0, living: 'apart', costs: [], picked: null, howOpen: false, pathOpen: false, toast: '', flipped: {}, sc: {} };
   LANGS = [['en','EN'],['it','IT'],['fr','FR'],['ar','ع']];
@@ -340,11 +340,17 @@ class Component extends DCLogic {
     this.Clock = () => { const [s, setS] = React.useState(0); React.useEffect(() => { const id = setInterval(() => setS(x => x + 1), 1000); return () => clearInterval(id); }, []); const mm = String(Math.floor(s / 60)).padStart(2, '0'); return React.createElement('span', null, `03:${mm}:${String(s % 60).padStart(2, '0')}`); };
   }
   loadGtm() {
-    const id = (this.props.gtmId || new URLSearchParams(location.search).get('gtm') || '').trim();
-    if (!/^GTM-[A-Z0-9]+$/i.test(id) || document.getElementById('olti-gtm')) return;
+    if (document.getElementById('olti-gtm')) return;
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
-    const s = document.createElement('script'); s.id = 'olti-gtm'; s.async = true; s.src = 'https://www.googletagmanager.com/gtm.js?id=' + encodeURIComponent(id);
+    const q = new URLSearchParams(location.search);
+    const gtm = (this.props.gtmId || q.get('gtm') || '').trim(), ga = (this.props.gaId ?? 'G-NMEYZ7ZWB5').trim();
+    const s = document.createElement('script'); s.id = 'olti-gtm'; s.async = true;
+    if (/^GTM-[A-Z0-9]+$/i.test(gtm)) { window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' }); s.src = 'https://www.googletagmanager.com/gtm.js?id=' + encodeURIComponent(gtm); }
+    else if (/^G-[A-Z0-9]+$/i.test(ga)) {
+      window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date()); window.gtag('config', ga, { anonymize_ip: true, allow_google_signals: false });
+      this.gaId = ga; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(ga);
+    } else return;
     document.head.appendChild(s);
   }
   componentDidMount() {
@@ -367,7 +373,11 @@ class Component extends DCLogic {
   mode() { return this.props.mode ?? 'online'; }
   applyLang() { document.documentElement.lang = this.state.lang; document.documentElement.dir = this.state.lang === 'ar' ? 'rtl' : 'ltr'; const t = this.t(); if (t) document.title = t.intro.title.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim(); }
   t() { return this.state.data ? this.state.data.i18n[this.state.lang] : null; }
-  track(ev, d = {}) { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'olti_' + ev, language: this.state.lang, mode: this.mode(), selected_id: this.state.id, chapter: this.state.step, ...d }); }
+  track(ev, d = {}) {
+    const p = { language: this.state.lang, mode: this.mode(), selected_id: this.state.id, chapter: this.state.step, ...d };
+    window.dataLayer = window.dataLayer || [];
+    if (this.gaId && window.gtag) window.gtag('event', 'olti_' + ev, p); else window.dataLayer.push({ event: 'olti_' + ev, ...p });
+  }
   rich(html) { return html ? React.createElement('span', { dangerouslySetInnerHTML: { __html: html } }) : null; }
   toastMsg(m) { this.setState({ toast: m }); clearTimeout(this.toastT); this.toastT = setTimeout(() => this.setState({ toast: '' }), 2400); }
   top() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
