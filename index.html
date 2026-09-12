@@ -14,6 +14,8 @@
 html,body{margin:0;padding:0;background:#E9ECF1;font-family:Barlow,system-ui,sans-serif;color:#0F1B33;-webkit-font-smoothing:antialiased}
 html[lang="ar"] body,html[lang="ar"] button,html[lang="ar"] [data-serif]{font-family:"IBM Plex Sans Arabic",Barlow,system-ui,sans-serif !important;letter-spacing:0 !important}
 html[lang="ar"] [data-latin-tight]{line-height:1.2 !important;letter-spacing:0 !important}
+html[lang="ar"] *{letter-spacing:0 !important;text-transform:none !important}
+html[lang="ar"] [data-latin]{letter-spacing:.14em !important;text-transform:uppercase !important}
 button{font-family:inherit;color:inherit}
 a{color:#00807A}a:hover{color:#002858}
 .accent{color:#00B0A8}
@@ -35,7 +37,7 @@ input[type=range].olti::-moz-range-thumb{width:30px;height:30px;border-radius:50
   <header style="position:sticky;top:0;z-index:20;background:rgba(250,250,247,.94);backdrop-filter:blur(10px);border-bottom:1px solid #E3E6EC">
     <div style="display:flex;align-items:center;gap:12px;padding:10px 16px">
       <img src="assets/yplus-logo.png" alt="Y+" style="height:26px;width:auto;display:block">
-      <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#5B6578">{{ brand }}</span>
+      <span data-latin style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#5B6578">{{ brand }}</span>
       <sc-if value="{{ isKiosk }}" hint-placeholder-val="{{ false }}"><span style="margin-inline-start:auto;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:#00807A;border:1px solid #00B0A8;border-radius:4px;padding:3px 7px">{{ t.modeKiosk }}</span></sc-if>
       <div role="group" aria-label="Language" style="margin-inline-start:auto;display:flex;gap:2px;background:#E9ECF1;border-radius:6px;padding:2px">
         <sc-for list="{{ langs }}" as="l" hint-placeholder-count="4">
@@ -310,7 +312,7 @@ input[type=range].olti::-moz-range-thumb{width:30px;height:30px;border-radius:50
   </main>
 
   <footer style="margin-top:auto;background:#002858;color:#fff;padding:24px 20px 28px;display:flex;flex-direction:column;gap:18px">
-    <div style="display:flex;align-items:center;gap:12px"><img src="assets/yplus-logo.png" alt="Y+" style="height:28px;width:auto;background:#fff;border-radius:4px;padding:3px 5px"><span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#B8C4D8">Awareness → Understanding → Action</span></div>
+    <div style="display:flex;align-items:center;gap:12px"><img src="assets/yplus-logo.png" alt="Y+" style="height:28px;width:auto;background:#fff;border-radius:4px;padding:3px 5px"><span data-latin style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#B8C4D8">Awareness → Understanding → Action</span></div>
     <div style="display:flex;flex-wrap:wrap;gap:14px 8px;align-items:center">
       <span style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#7FD9D4">{{ t.footer.follow }}</span>
       <sc-for list="{{ social }}" as="s" hint-placeholder-count="4">
