@@ -1,0 +1,1610 @@
+{
+ "meta": {
+  "tool": "One Love, Two IDs",
+  "toolId": "one-love-two-ids",
+  "updated": "2026-09-10",
+  "sourceChecked": "09 September 2026",
+  "defaultLanguage": "en",
+  "languages": [
+   "en",
+   "it",
+   "fr",
+   "ar"
+  ],
+  "brand": "YPlus · Communicating Palestine",
+  "sceneMap": [
+   "distance",
+   "calendar",
+   "housing",
+   "documents",
+   "form",
+   "clock",
+   "timeline"
+  ],
+  "contact": {
+   "site": "https://yplus.ps",
+   "story": "https://yplus.ps/your-story/",
+   "contact": "https://yplus.ps/#contact",
+   "social": [
+    [
+     "Instagram",
+     "https://www.instagram.com/yplusmedia/"
+    ],
+    [
+     "Facebook",
+     "https://www.facebook.com/yplusmedia"
+    ],
+    [
+     "X",
+     "https://twitter.com/Yplus0"
+    ],
+    [
+     "YouTube",
+     "https://www.youtube.com/channel/UCg4RUJbMqbhhWCxlkj4xIAA/"
+    ]
+   ]
+  }
+ },
+ "sources": {
+  "law": "https://main.knesset.gov.il/EN/News/PressReleases/Pages/press9326q.aspx",
+  "hamokedDelay": "https://www.hamoked.org/document.php?dID=Updates1157",
+  "hamokedWidow": "https://www.hamoked.org/document.php?dID=Updates2124",
+  "hamokedChildren": "https://www.hamoked.org/document.php?dID=Updates1843",
+  "btselemResidency": "https://www.btselem.org/jerusalem/revocation_statistics",
+  "btselemFamilies": "https://www.btselem.org/publications/summaries/200401_forbidden_families"
+ },
+ "reward": {
+  "badgeId": "chose-each-other",
+  "toolId": "one-love-two-ids",
+  "badgeStorage": "cp_toolkit_badges",
+  "progressStorage": "cp_toolkit_witnessed",
+  "actionStorage": "cp_toolkit_action_started",
+  "toolkitTotal": 14
+ },
+ "i18n": {
+  "en": {
+   "skip": "Skip to content",
+   "modeOnline": "Interactive experience",
+   "modeKiosk": "Exhibition mode",
+   "intro": {
+    "eyebrow": "An interactive story about family life",
+    "title": "One Love,<br><span class=\"accent\">Two IDs</span>",
+    "lede": "You found each other across a wall. Now try to build an ordinary life together — while two different legal statuses shape every decision.",
+    "duration": "3–5 minutes",
+    "mobile": "Made for phones",
+    "noData": "No personal data collected",
+    "context": "<b>Before you begin:</b> Palestinians in East Jerusalem generally hold Israeli permanent residency, while Palestinians in the West Bank carry Palestinian Authority IDs. The distance may be short, but the rules for movement, residence and family life are not the same.",
+    "how": "How does this work?",
+    "question": "Choose the ID you will carry in this story",
+    "blueChip": "Blue · Jerusalem",
+    "blueTitle": "You are from Jerusalem",
+    "blueDesc": "You hold permanent residency. Nour carries a West Bank ID.",
+    "greenChip": "Green · West Bank",
+    "greenTitle": "You are from the West Bank",
+    "greenDesc": "You carry a West Bank ID. Nour holds Jerusalem residency.",
+    "note": "Nour is a fictional composite character. The legal and administrative barriers shown are documented patterns; outcomes differ by case and limited exceptions may apply."
+   },
+   "how": {
+    "title": "How to experience the story",
+    "ready": "I understand — begin",
+    "steps": [
+     "Choose one of the two IDs.",
+     "Make the decisions a couple faces over 12 years.",
+     "After each choice, read the documented reality behind it.",
+     "At the end, meet real cases and explore sources or take action."
+    ]
+   },
+   "common": {
+    "you": "You",
+    "nour": "Nour",
+    "jerusalem": "Jerusalem",
+    "westBank": "West Bank",
+    "year": "Year",
+    "beginning": "the beginning",
+    "continue": "Continue",
+    "finish": "See what the years reveal",
+    "documented": "Documented reality",
+    "livingApart": "Living apart",
+    "livingJerusalem": "Together in Jerusalem",
+    "livingWestBank": "Together in the West Bank"
+   },
+   "chapters": [
+    {
+     "title": "How it started",
+     "year": 0,
+     "text": "It was a cousin’s wedding in Ramallah. Nour spilled tea on your sleeve, apologised in three dialects, and made you laugh until you forgot to be embarrassed. Between your homes: a wall and checkpoints. <em>You were not thinking about paperwork. You were thinking about Nour’s laugh.</em>",
+     "choices": [
+      {
+       "text": "Fall for Nour anyway",
+       "log": "Love began across two ID systems",
+       "consequence": "Of course you do. Love does not check ID colours. The system you are about to navigate does.",
+       "next": 1
+      }
+     ]
+    },
+    {
+     "title": "Seeing each other",
+     "year": 1,
+     "text": "A year in, you have memorised the rhythm of crossings. To spend a weekend together, someone has to move — and movement between Jerusalem and the West Bank is governed by permits and checkpoints.",
+     "choices": [
+      {
+       "text": "Nour applies for a visit permit",
+       "log": "Lived around permit decisions",
+       "consequence": "A permit can be limited, delayed or refused. Plans become provisional, and every reunion has an expiry date.",
+       "fact": "West Bank ID holders generally need an Israeli-issued permit to enter East Jerusalem. Eligibility, purpose, validity and approval can vary.",
+       "next": 2
+      },
+      {
+       "text": "You make the crossing instead",
+       "log": "Carried the distance repeatedly",
+       "consequenceBlue": "As the Jerusalem resident, you can usually reach Nour more easily than Nour can reach you — so you carry most of the travel.",
+       "consequenceGreen": "As the West Bank ID holder, your access to Jerusalem depends on permission, so the couple’s freedom of movement is unequal from the start.",
+       "fact": "The practical ability to travel is shaped by legal status, permit rules and checkpoints, not simply by physical distance.",
+       "next": 2
+      }
+     ]
+    },
+    {
+     "title": "You decide to marry",
+     "year": 2,
+     "text": "Two years of stolen weekends, and you are sure. Nour proposes on a rooftop with the wrong city’s lights behind them. <em>Yes.</em> Then comes a question most couples take for granted: where will you live?",
+     "choices": [
+      {
+       "text": "Build our home in Jerusalem",
+       "log": "Chose Jerusalem with insecure status",
+       "living": "jerusalem",
+       "consequenceBlue": "You make a home in Jerusalem. Nour may qualify only for a temporary stay permit, if at all, with no ordinary path to permanent status and repeated renewals shaping daily life.",
+       "consequenceGreen": "You make a home in Jerusalem. Your ability to live there with Nour depends on temporary permission, eligibility and renewals rather than a secure path to permanent status.",
+       "fact": "The Citizenship and Entry into Israel Law restricts citizenship and residency for West Bank and Gaza spouses, while allowing limited permits and humanitarian exceptions.",
+       "next": 3
+      },
+      {
+       "text": "Build our home in the West Bank",
+       "log": "Chose the West Bank and had to protect Jerusalem residency",
+       "living": "westBank",
+       "consequence": "You build in the West Bank, but the Jerusalem resident must keep proving that Jerusalem remains their ‘centre of life’ to protect residency and social rights.",
+       "fact": "East Jerusalem permanent residents can lose residency when authorities determine that their centre of life is no longer in Jerusalem. Evidence can include housing, bills, work and other records.",
+       "next": 3
+      },
+      {
+       "text": "Stay married, but live apart",
+       "log": "Stayed married in two homes",
+       "living": "apart",
+       "consequence": "Two homes, two beds, two phone screens at midnight. Separation becomes the option that appears least dangerous to either person’s legal status.",
+       "fact": "Some couples live separately or under temporary arrangements because every available route to living together carries legal and practical risks.",
+       "next": 3
+      }
+     ]
+    },
+    {
+     "title": "You apply to live together",
+     "year": 3,
+     "text": "You gather certificates, leases, bills, photographs and proof of a relationship that feels obvious to you. Then you wait. <em>And wait.</em>",
+     "choices": [
+      {
+       "text": "Open the answer",
+       "log": "Entered a long, uncertain process",
+       "consequence": "There is no ordinary route to citizenship or permanent residency for the West Bank spouse. Some people may receive temporary permits under age thresholds or exceptions, but these require renewals and can remain insecure for years.",
+       "fact": "The 2022 temporary law, extended through 14 March 2027, generally bars granting citizenship or residency to residents of the West Bank and Gaza, subject to specified exceptions and permits.",
+       "next": 4
+      }
+     ]
+    },
+    {
+     "title": "A child",
+     "year": 5,
+     "text": "Despite everything, joy: a baby with Nour’s eyes and your stubbornness. Then come the forms. Your child enters a system where registration and status can depend on the parents’ documents, residence and place of birth.",
+     "choices": [
+      {
+       "text": "Start the registration process",
+       "log": "Had to prove the child’s place in the family",
+       "consequence": "You submit documents to prove parenthood, residence and eligibility. A child born into one family can still face delay or uncertainty on paper.",
+       "fact": "Child registration and status in East Jerusalem can involve separate procedures and evidence. Human-rights organisations have documented delays and children left without secure status while cases were examined.",
+       "next": 5
+      }
+     ]
+    },
+    {
+     "title": "The night of the hospital",
+     "year": 8,
+     "text": "Three in the morning. Your child’s fever will not break. A specialised hospital is in East Jerusalem. The clock is loud, and once again the family’s documents determine who can travel together.",
+     "choices": [
+      {
+       "text": "The Jerusalem resident takes the child",
+       "log": "Split the family during a medical emergency",
+       "consequence": "One parent travels while the other waits for permission or news. The child receives care; the feeling of helplessness remains.",
+       "fact": "West Bank patients and companions may need permits to access East Jerusalem hospitals. Emergency and referral arrangements exist, but access can still involve approvals and crossing procedures.",
+       "next": 6
+      },
+      {
+       "text": "Try to cross together",
+       "log": "Faced the checkpoint together",
+       "consequence": "You travel together, knowing permission and checks may determine whether both parents reach the hospital. Healthcare becomes another moment of uncertainty.",
+       "fact": "Movement through checkpoints is governed by identification and permit rules. A family’s ability to remain together during travel can depend on each member’s status.",
+       "next": 6
+      }
+     ]
+    },
+    {
+     "title": "Twelve years",
+     "year": 12,
+     "text": "You have built a life from visits, forms, renewals, evidence and waiting. Love survived. But survival should not be the standard for the right to live with your family.",
+     "choices": [
+      {
+       "text": "See what this story means",
+       "log": "Kept choosing family life",
+       "consequence": "The paperwork never asked the most important question: whether you were a family. You were. The uncertainty came from the system around you.",
+       "fact": "The right to family life is recognised in international human-rights law. This experience focuses on how residency and movement policies affect Palestinian families.",
+       "next": "end"
+      }
+     ]
+    }
+   ],
+   "end": {
+    "eyebrow": "Years later",
+    "title": "Still here. Still choosing each other.",
+    "aha": "Two people, one family — and a life repeatedly divided by documents, borders and permissions.",
+    "message": "Your choices changed the route, but none removed the underlying inequality. That is the point: the burden is built into the system, not into the family.",
+    "disclaimer": "<b>Important:</b> This is an educational and advocacy experience, not legal advice. Nour is fictional; the patterns and real-case summaries are based on publicly documented material. Individual outcomes differ, and limited exceptions may apply. Sources last reviewed on 1 August 2026."
+   },
+   "summary": {
+    "together": "Together",
+    "years": "12 years and counting",
+    "living": "Living arrangement",
+    "cost": "What it required",
+    "choices": "difficult choices"
+   },
+   "reality": {
+    "title": "What this reveals about Palestine",
+    "intro": "The experience is not about two distant countries. It is about Palestinian communities separated by different legal regimes within a very small geography.",
+    "items": [
+     {
+      "title": "Distance is not the main barrier",
+      "text": "Jerusalem and nearby West Bank communities can be minutes apart, yet movement may require permits, checkpoints and different routes."
+     },
+     {
+      "title": "A family can have several statuses",
+      "text": "Spouses and children may hold different documents, with different rights to movement, residence, healthcare and services."
+     },
+     {
+      "title": "Temporary becomes a way of life",
+      "text": "Renewals, evidence and uncertainty can follow a family for years, affecting work, housing, parenting and emergencies."
+     }
+    ]
+   },
+   "realStories": {
+    "title": "Real lives behind the pattern",
+    "intro": "These are condensed summaries of publicly documented cases. Names are omitted here unless the source itself made them public.",
+    "link": "Read the documented case",
+    "items": [
+     {
+      "title": "Three years to receive an answer",
+      "text": "An East Jerusalem schoolteacher married a West Bank woman. After years of delay, two administrative applications and a court petition, the family-unification application was approved.",
+      "url": "hamokedDelay"
+     },
+     {
+      "title": "Twenty-five years on renewable permits",
+      "text": "A West Bank woman who had lived in East Jerusalem since 1995 remained on renewable stay permits for decades. After her husband died, she raised the family while lacking secure status and full social rights.",
+      "url": "hamokedWidow"
+     },
+     {
+      "title": "Children left without secure registration",
+      "text": "A Jerusalem resident and his West Bank wife faced repeated demands to prove parenthood while their two young children remained without secure registration and related rights.",
+      "url": "hamokedChildren"
+     }
+    ]
+   },
+   "sources": {
+    "title": "Evidence and further reading",
+    "note": "The platform should review legal language before every campaign launch because laws, procedures and permit practices can change.",
+    "items": [
+     "Knesset: 2026 extension of the Citizenship and Entry into Israel Law through 14 March 2027.",
+     "HaMoked: documented family-unification, permit and child-registration cases.",
+     "B’Tselem: East Jerusalem residency revocation statistics and family-separation reporting."
+    ]
+   },
+   "actions": {
+    "title": "Turn understanding into action",
+    "intro": "Share the experience, ask an elected representative to defend the right to family life, or replay the story from the other ID.",
+    "email": "Write to a representative",
+    "share": "Share this story",
+    "other": "Experience the other ID",
+    "nextVisitor": "Finish and reset for the next visitor"
+   },
+   "mail": {
+    "subject": "The right to family life — One Love, Two IDs",
+    "body": "Dear Representative,\n\nI completed an interactive story about a Palestinian couple — one with Jerusalem residency and one with a West Bank ID — trying to live together as a family.\n\nThe Citizenship and Entry into Israel Law restricts family unification and can leave families dependent on temporary permits, renewals and exceptions. I ask you to raise the impact of these policies and support equal protection of the right to family life.\n\nSincerely,\nA concerned constituent"
+   },
+   "toast": {
+    "copied": "Link copied",
+    "saved": "Share image saved",
+    "reset": "Experience reset"
+   },
+   "badge": {
+    "title": "Chose each other",
+    "sub": "Witness badge · saved on this device only",
+    "progress": "Story 1 of 14 in the Communicating Palestine toolkit",
+    "howOpen": "How does this work?",
+    "howClose": "Hide",
+    "start": "Begin",
+    "tracker": "Difficult choices",
+    "sourceLabel": "Source",
+    "picked": "Your choice"
+   },
+   "scenes": {
+    "flip": "Tap to see the back",
+    "carry": "Carry this ID",
+    "back": {
+     "blue": [
+      [
+       "Status",
+       "Permanent residency, not citizenship"
+      ],
+      [
+       "Residence",
+       "Can be revoked if your ‘centre of life’ leaves Jerusalem"
+      ],
+      [
+       "Spouse from the West Bank",
+       "Permit-based; no ordinary path to permanent status"
+      ]
+     ],
+     "green": [
+      [
+       "Status",
+       "Palestinian Authority ID"
+      ],
+      [
+       "Movement",
+       "Entering Jerusalem requires an Israeli-issued permit"
+      ],
+      [
+       "Spouse from Jerusalem",
+       "Living together depends on temporary permits"
+      ]
+     ]
+    },
+    "distance": {
+     "title": "How far apart are you?",
+     "hint": "Drag to travel from your home to Nour’s",
+     "you": "Your home",
+     "nour": "Nour’s home",
+     "wall": "Barrier",
+     "checkpoint": "Checkpoint",
+     "km": "about 15 km",
+     "done": "Fifteen kilometres. One checkpoint. Different rules for each of you."
+    },
+    "calendar": {
+     "title": "Plan a weekend together",
+     "hint": "Tap two days",
+     "stamp": "Permit · pending",
+     "done": "Someone must move. Every plan waits for permission."
+    },
+    "housing": {
+     "title": "Where will you live?",
+     "hint": "Tap a place to put your home there",
+     "jerusalem": "Jerusalem",
+     "westBank": "West Bank",
+     "apart": "Two homes",
+     "wall": "Barrier"
+    },
+    "documents": {
+     "title": "Assemble your file",
+     "hint": "Tap each document to add it to the application",
+     "items": [
+      "Marriage certificate",
+      "Lease",
+      "Utility bills",
+      "Photographs",
+      "Proof of relationship"
+     ],
+     "waiting": "Waiting",
+     "months": "months and counting"
+    },
+    "form": {
+     "title": "Birth registration",
+     "hint": "Tap each field to fill it",
+     "fields": [
+      [
+       "Child’s name",
+       "Nour’s eyes, your stubbornness"
+      ],
+      [
+       "Place of birth",
+       "East Jerusalem"
+      ],
+      [
+       "Parent 1 · status",
+       "Jerusalem permanent residency"
+      ],
+      [
+       "Parent 2 · status",
+       "West Bank ID"
+      ],
+      [
+       "Child’s status",
+       "Pending"
+      ]
+     ],
+     "pending": "Pending"
+    },
+    "clock": {
+     "title": "3:00 AM",
+     "hint": "Minutes pass while you decide"
+    },
+    "timeline": {
+     "title": "Your twelve years",
+     "hint": "Tap a year to remember"
+    },
+    "tracker": {
+     "open": "Show your path",
+     "close": "Hide your path"
+    }
+   },
+   "footer": {
+    "follow": "Follow Y+",
+    "story": "Have a story to share?",
+    "share": "Share it with us",
+    "contact": "Contact Y+"
+   }
+  },
+  "it": {
+   "skip": "Vai al contenuto",
+   "modeOnline": "Esperienza interattiva",
+   "modeKiosk": "Modalità mostra",
+   "intro": {
+    "eyebrow": "Una storia interattiva sulla vita familiare",
+    "title": "Un solo amore,<br><span class=\"accent\">due documenti</span>",
+    "lede": "Vi siete incontrati al di là di un muro. Ora provate a costruire una vita normale insieme, mentre due status giuridici diversi condizionano ogni decisione.",
+    "duration": "3–5 minuti",
+    "mobile": "Pensata per smartphone",
+    "noData": "Nessun dato personale raccolto",
+    "context": "<b>Prima di iniziare:</b> i palestinesi di Gerusalemme Est hanno generalmente la residenza permanente israeliana, mentre quelli della Cisgiordania possiedono documenti dell’Autorità Palestinese. La distanza può essere breve, ma le regole su movimento, residenza e vita familiare non sono le stesse.",
+    "how": "Come funziona?",
+    "question": "Scegli il documento che avrai nella storia",
+    "blueChip": "Blu · Gerusalemme",
+    "blueTitle": "Sei di Gerusalemme",
+    "blueDesc": "Hai la residenza permanente. Nour ha un documento della Cisgiordania.",
+    "greenChip": "Verde · Cisgiordania",
+    "greenTitle": "Sei della Cisgiordania",
+    "greenDesc": "Hai un documento della Cisgiordania. Nour ha la residenza di Gerusalemme.",
+    "note": "Nour è un personaggio composito di fantasia. Le barriere legali e amministrative sono modelli documentati; gli esiti variano e possono esistere eccezioni limitate."
+   },
+   "how": {
+    "title": "Come vivere la storia",
+    "ready": "Ho capito — inizia",
+    "steps": [
+     "Scegli uno dei due documenti.",
+     "Prendi le decisioni che una coppia affronta in 12 anni.",
+     "Dopo ogni scelta, leggi la realtà documentata.",
+     "Alla fine, scopri casi reali, fonti e possibili azioni."
+    ]
+   },
+   "common": {
+    "you": "Tu",
+    "nour": "Nour",
+    "jerusalem": "Gerusalemme",
+    "westBank": "Cisgiordania",
+    "year": "Anno",
+    "beginning": "l’inizio",
+    "continue": "Continua",
+    "finish": "Scopri cosa rivelano gli anni",
+    "documented": "Realtà documentata",
+    "livingApart": "Vivete separati",
+    "livingJerusalem": "Insieme a Gerusalemme",
+    "livingWestBank": "Insieme in Cisgiordania"
+   },
+   "chapters": [
+    {
+     "title": "Come è iniziata",
+     "year": 0,
+     "text": "Era il matrimonio di un cugino a Ramallah. Nour ti rovescia il tè sulla manica, si scusa in tre dialetti e ti fa ridere fino a dimenticare l’imbarazzo. Tra le vostre case: un muro e posti di blocco. <em>Non pensavi ai documenti. Pensavi alla risata di Nour.</em>",
+     "choices": [
+      {
+       "text": "Innamorati comunque",
+       "log": "L’amore è iniziato tra due sistemi di documenti",
+       "consequence": "Certo che lo fai. L’amore non controlla il colore dei documenti. Il sistema che affronterete, sì.",
+       "next": 1
+      }
+     ]
+    },
+    {
+     "title": "Riuscire a vedersi",
+     "year": 1,
+     "text": "Dopo un anno conosci il ritmo degli attraversamenti. Per passare un fine settimana insieme, qualcuno deve muoversi, e gli spostamenti tra Gerusalemme e la Cisgiordania dipendono da permessi e checkpoint.",
+     "choices": [
+      {
+       "text": "Nour chiede un permesso di visita",
+       "log": "Avete vissuto secondo le decisioni sui permessi",
+       "consequence": "Un permesso può essere limitato, ritardato o negato. I programmi diventano provvisori e ogni incontro ha una scadenza.",
+       "fact": "Chi possiede un documento della Cisgiordania ha generalmente bisogno di un permesso israeliano per entrare a Gerusalemme Est. Requisiti, finalità, durata e approvazione variano.",
+       "next": 2
+      },
+      {
+       "text": "Attraversi tu",
+       "log": "Hai sostenuto ripetutamente la distanza",
+       "consequenceBlue": "Come residente di Gerusalemme, di solito puoi raggiungere Nour più facilmente di quanto Nour possa raggiungere te.",
+       "consequenceGreen": "Con un documento della Cisgiordania, l’accesso a Gerusalemme dipende da un’autorizzazione: la libertà di movimento della coppia è diseguale fin dall’inizio.",
+       "fact": "La possibilità concreta di viaggiare dipende dallo status giuridico, dai permessi e dai checkpoint, non solo dalla distanza.",
+       "next": 2
+      }
+     ]
+    },
+    {
+     "title": "Decidete di sposarvi",
+     "year": 2,
+     "text": "Dopo due anni di fine settimana rubati, ne siete sicuri. Nour fa la proposta su un tetto, con le luci della città sbagliata alle spalle. <em>Sì.</em> Poi arriva una domanda che molte coppie danno per scontata: dove vivrete?",
+     "choices": [
+      {
+       "text": "Costruiamo casa a Gerusalemme",
+       "log": "Avete scelto Gerusalemme con uno status insicuro",
+       "living": "jerusalem",
+       "consequenceBlue": "Create una casa a Gerusalemme. Nour può avere accesso soltanto a un permesso temporaneo, se ne ha diritto, senza un percorso ordinario verso uno status permanente e con rinnovi continui.",
+       "consequenceGreen": "Create una casa a Gerusalemme. La tua possibilità di viverci con Nour dipende da autorizzazioni temporanee, requisiti e rinnovi, non da uno status sicuro.",
+       "fact": "La Legge sulla cittadinanza e l’ingresso limita cittadinanza e residenza per coniugi della Cisgiordania e di Gaza, con permessi limitati ed eccezioni umanitarie.",
+       "next": 3
+      },
+      {
+       "text": "Costruiamo casa in Cisgiordania",
+       "log": "Avete scelto la Cisgiordania proteggendo la residenza di Gerusalemme",
+       "living": "westBank",
+       "consequence": "Costruite la vostra vita in Cisgiordania, ma il residente di Gerusalemme deve continuare a dimostrare che Gerusalemme è il proprio ‘centro di vita’ per proteggere residenza e diritti sociali.",
+       "fact": "La residenza permanente di Gerusalemme Est può essere revocata se le autorità ritengono che il centro di vita non sia più a Gerusalemme.",
+       "next": 3
+      },
+      {
+       "text": "Sposati, ma in case separate",
+       "log": "Sposati in due case",
+       "living": "apart",
+       "consequence": "Due case, due letti, due schermi di notte. La separazione appare come l’opzione meno pericolosa per lo status legale di entrambi.",
+       "fact": "Alcune coppie vivono separate o con soluzioni temporanee perché ogni strada per vivere insieme comporta rischi legali e pratici.",
+       "next": 3
+      }
+     ]
+    },
+    {
+     "title": "Chiedete di vivere insieme",
+     "year": 3,
+     "text": "Raccogliete certificati, contratti, bollette, foto e prove di una relazione che per voi è ovvia. Poi aspettate. <em>E aspettate.</em>",
+     "choices": [
+      {
+       "text": "Apri la risposta",
+       "log": "Siete entrati in un processo lungo e incerto",
+       "consequence": "Non esiste un percorso ordinario verso cittadinanza o residenza permanente per il coniuge della Cisgiordania. Alcune persone possono ricevere permessi temporanei, ma con rinnovi e precarietà per anni.",
+       "fact": "La legge temporanea del 2022, estesa fino al 14 marzo 2027, vieta in generale cittadinanza o residenza a residenti di Cisgiordania e Gaza, salvo permessi ed eccezioni previste.",
+       "next": 4
+      }
+     ]
+    },
+    {
+     "title": "Un figlio",
+     "year": 5,
+     "text": "Nonostante tutto, arriva la gioia: un bambino con gli occhi di Nour e la tua ostinazione. Poi arrivano i moduli. Lo status del bambino può dipendere dai documenti dei genitori, dalla residenza e dal luogo di nascita.",
+     "choices": [
+      {
+       "text": "Avvia la registrazione",
+       "log": "Avete dovuto dimostrare il posto del bambino nella famiglia",
+       "consequence": "Presentate prove di genitorialità, residenza e requisiti. Un bambino nato in una sola famiglia può comunque affrontare ritardi e incertezza sulla carta.",
+       "fact": "La registrazione dei minori a Gerusalemme Est può richiedere procedure e prove separate. Sono stati documentati ritardi e minori rimasti senza status sicuro.",
+       "next": 5
+      }
+     ]
+    },
+    {
+     "title": "La notte dell’ospedale",
+     "year": 8,
+     "text": "Sono le tre del mattino. La febbre di vostro figlio non scende. Un ospedale specializzato è a Gerusalemme Est. Ancora una volta i documenti decidono chi può viaggiare insieme.",
+     "choices": [
+      {
+       "text": "Il residente di Gerusalemme porta il bambino",
+       "log": "La famiglia si è divisa durante un’emergenza",
+       "consequence": "Un genitore parte, l’altro aspetta un permesso o notizie. Il bambino riceve cure; l’impotenza rimane.",
+       "fact": "Pazienti e accompagnatori della Cisgiordania possono aver bisogno di permessi per gli ospedali di Gerusalemme Est. Esistono procedure, ma l’accesso può richiedere autorizzazioni e attraversamenti.",
+       "next": 6
+      },
+      {
+       "text": "Provate ad attraversare insieme",
+       "log": "Avete affrontato il checkpoint insieme",
+       "consequence": "Viaggiate insieme sapendo che controlli e autorizzazioni possono determinare se entrambi raggiungerete l’ospedale.",
+       "fact": "Il passaggio ai checkpoint dipende da identificazione e permessi. La possibilità di restare insieme durante il viaggio può variare per ogni membro della famiglia.",
+       "next": 6
+      }
+     ]
+    },
+    {
+     "title": "Dodici anni",
+     "year": 12,
+     "text": "Avete costruito una vita di visite, moduli, rinnovi, prove e attese. L’amore è sopravvissuto. Ma la sopravvivenza non dovrebbe essere lo standard del diritto alla vita familiare.",
+     "choices": [
+      {
+       "text": "Scopri cosa significa",
+       "log": "Avete continuato a scegliere la famiglia",
+       "consequence": "I documenti non hanno mai chiesto se foste una famiglia. Lo eravate. L’incertezza proveniva dal sistema intorno a voi.",
+       "fact": "Il diritto alla vita familiare è riconosciuto dal diritto internazionale dei diritti umani. Questa esperienza mostra l’impatto delle politiche di residenza e movimento sulle famiglie palestinesi.",
+       "next": "end"
+      }
+     ]
+    }
+   ],
+   "end": {
+    "eyebrow": "Anni dopo",
+    "title": "Ancora qui. Ancora insieme.",
+    "aha": "Due persone, una famiglia — e una vita divisa ripetutamente da documenti, confini e permessi.",
+    "message": "Le tue scelte hanno cambiato il percorso, ma non hanno eliminato la disuguaglianza di fondo. Il peso è costruito nel sistema, non nella famiglia.",
+    "disclaimer": "<b>Importante:</b> questa è un’esperienza educativa e di advocacy, non consulenza legale. Nour è un personaggio immaginario; i modelli e i casi reali si basano su materiali pubblici. Gli esiti individuali variano e possono applicarsi eccezioni limitate. Fonti verificate il 1° agosto 2026."
+   },
+   "summary": {
+    "together": "Insieme",
+    "years": "12 anni e oltre",
+    "living": "Soluzione abitativa",
+    "cost": "Cosa ha richiesto",
+    "choices": "scelte difficili"
+   },
+   "reality": {
+    "title": "Cosa rivela sulla Palestina",
+    "intro": "Non si parla di due paesi lontani, ma di comunità palestinesi separate da regimi giuridici diversi in uno spazio geografico molto piccolo.",
+    "items": [
+     {
+      "title": "La distanza non è il vero ostacolo",
+      "text": "Gerusalemme e molte comunità della Cisgiordania sono vicine, ma muoversi può richiedere permessi, checkpoint e percorsi differenti."
+     },
+     {
+      "title": "Una famiglia può avere status diversi",
+      "text": "Coniugi e figli possono avere documenti differenti e diritti diversi a movimento, residenza, salute e servizi."
+     },
+     {
+      "title": "Il temporaneo diventa vita quotidiana",
+      "text": "Rinnovi, prove e incertezza possono accompagnare una famiglia per anni, influenzando lavoro, casa, genitorialità ed emergenze."
+     }
+    ]
+   },
+   "realStories": {
+    "title": "Vite reali dietro il modello",
+    "intro": "Sintesi di casi documentati pubblicamente. I nomi sono omessi salvo quando resi pubblici dalla fonte.",
+    "link": "Leggi il caso documentato",
+    "items": [
+     {
+      "title": "Tre anni per una risposta",
+      "text": "Un insegnante di Gerusalemme Est sposò una donna della Cisgiordania. Dopo ritardi, due ricorsi amministrativi e una causa, la domanda fu approvata.",
+      "url": "hamokedDelay"
+     },
+     {
+      "title": "Venticinque anni di permessi rinnovabili",
+      "text": "Una donna della Cisgiordania visse a Gerusalemme Est dal 1995 con permessi rinnovabili. Rimasta vedova, crebbe la famiglia senza uno status sicuro e pieni diritti sociali.",
+      "url": "hamokedWidow"
+     },
+     {
+      "title": "Bambini senza registrazione sicura",
+      "text": "Un residente di Gerusalemme e la moglie della Cisgiordania dovettero provare ripetutamente la paternità mentre i due figli restavano senza registrazione sicura.",
+      "url": "hamokedChildren"
+     }
+    ]
+   },
+   "sources": {
+    "title": "Fonti e approfondimenti",
+    "note": "La piattaforma dovrebbe riesaminare il linguaggio legale prima di ogni lancio, perché leggi e procedure possono cambiare.",
+    "items": [
+     "Knesset: proroga 2026 della legge fino al 14 marzo 2027.",
+     "HaMoked: casi documentati su ricongiungimento, permessi e registrazione dei minori.",
+     "B’Tselem: dati sulle revoche di residenza e rapporti sulla separazione familiare."
+    ]
+   },
+   "actions": {
+    "title": "Trasforma la comprensione in azione",
+    "intro": "Condividi l’esperienza, scrivi a un rappresentante o ripeti la storia con l’altro documento.",
+    "email": "Scrivi a un rappresentante",
+    "share": "Condividi la storia",
+    "other": "Prova l’altro documento",
+    "nextVisitor": "Termina e prepara per il prossimo visitatore"
+   },
+   "mail": {
+    "subject": "Il diritto alla vita familiare — Un solo amore, due documenti",
+    "body": "Gentile Rappresentante,\n\nHo completato una storia interattiva su una coppia palestinese — una persona con residenza a Gerusalemme e una con documento della Cisgiordania — che cerca di vivere insieme come famiglia.\n\nLa Legge sulla cittadinanza e l’ingresso limita il ricongiungimento familiare e può lasciare le famiglie dipendenti da permessi temporanei, rinnovi ed eccezioni. Le chiedo di sollevare l’impatto di queste politiche e sostenere la tutela paritaria del diritto alla vita familiare.\n\nCordiali saluti"
+   },
+   "toast": {
+    "copied": "Link copiato",
+    "saved": "Immagine salvata",
+    "reset": "Esperienza reimpostata"
+   },
+   "badge": {
+    "title": "Vi siete scelti",
+    "sub": "Badge testimone · salvato solo su questo dispositivo",
+    "progress": "Storia 1 di 14 del toolkit Communicating Palestine",
+    "howOpen": "Come funziona?",
+    "howClose": "Nascondi",
+    "start": "Inizia",
+    "tracker": "Scelte difficili",
+    "sourceLabel": "Fonte",
+    "picked": "La tua scelta"
+   },
+   "scenes": {
+    "flip": "Tocca per vedere il retro",
+    "carry": "Porta questo documento",
+    "back": {
+     "blue": [
+      [
+       "Status",
+       "Residenza permanente, non cittadinanza"
+      ],
+      [
+       "Residenza",
+       "Revocabile se il ‘centro di vita’ lascia Gerusalemme"
+      ],
+      [
+       "Coniuge dalla Cisgiordania",
+       "Solo permessi; nessuna via ordinaria allo status permanente"
+      ]
+     ],
+     "green": [
+      [
+       "Status",
+       "Documento dell’Autorità Palestinese"
+      ],
+      [
+       "Movimento",
+       "Entrare a Gerusalemme richiede un permesso israeliano"
+      ],
+      [
+       "Coniuge di Gerusalemme",
+       "Vivere insieme dipende da permessi temporanei"
+      ]
+     ]
+    },
+    "distance": {
+     "title": "Quanto siete lontani?",
+     "hint": "Trascina per viaggiare da casa tua a quella di Nour",
+     "you": "Casa tua",
+     "nour": "Casa di Nour",
+     "wall": "Barriera",
+     "checkpoint": "Checkpoint",
+     "km": "circa 15 km",
+     "done": "Quindici chilometri. Un checkpoint. Regole diverse per ciascuno di voi."
+    },
+    "calendar": {
+     "title": "Pianifica un fine settimana insieme",
+     "hint": "Tocca due giorni",
+     "stamp": "Permesso · in attesa",
+     "done": "Qualcuno deve muoversi. Ogni piano aspetta un’autorizzazione."
+    },
+    "housing": {
+     "title": "Dove vivrete?",
+     "hint": "Tocca un luogo per mettere lì la vostra casa",
+     "jerusalem": "Gerusalemme",
+     "westBank": "Cisgiordania",
+     "apart": "Due case",
+     "wall": "Barriera"
+    },
+    "documents": {
+     "title": "Prepara il fascicolo",
+     "hint": "Tocca ogni documento per aggiungerlo alla domanda",
+     "items": [
+      "Certificato di matrimonio",
+      "Contratto d’affitto",
+      "Bollette",
+      "Fotografie",
+      "Prova della relazione"
+     ],
+     "waiting": "In attesa",
+     "months": "mesi e si continua a contare"
+    },
+    "form": {
+     "title": "Registrazione di nascita",
+     "hint": "Tocca ogni campo per compilarlo",
+     "fields": [
+      [
+       "Nome del bambino",
+       "Gli occhi di Nour, la tua testardaggine"
+      ],
+      [
+       "Luogo di nascita",
+       "Gerusalemme Est"
+      ],
+      [
+       "Genitore 1 · status",
+       "Residenza permanente a Gerusalemme"
+      ],
+      [
+       "Genitore 2 · status",
+       "Documento della Cisgiordania"
+      ],
+      [
+       "Status del bambino",
+       "In attesa"
+      ]
+     ],
+     "pending": "In attesa"
+    },
+    "clock": {
+     "title": "3:00 di notte",
+     "hint": "I minuti passano mentre decidi"
+    },
+    "timeline": {
+     "title": "I vostri dodici anni",
+     "hint": "Tocca un anno per ricordare"
+    },
+    "tracker": {
+     "open": "Mostra il tuo percorso",
+     "close": "Nascondi il percorso"
+    }
+   },
+   "footer": {
+    "follow": "Segui Y+",
+    "story": "Hai una storia da raccontare?",
+    "share": "Condividila con noi",
+    "contact": "Contatta Y+"
+   }
+  },
+  "fr": {
+   "skip": "Aller au contenu",
+   "modeOnline": "Expérience interactive",
+   "modeKiosk": "Mode exposition",
+   "intro": {
+    "eyebrow": "Une histoire interactive sur la vie familiale",
+    "title": "Un seul amour,<br><span class=\"accent\">deux identités</span>",
+    "lede": "Vous vous êtes trouvés de part et d’autre d’un mur. Essayez maintenant de construire une vie ordinaire ensemble, alors que deux statuts juridiques différents façonnent chaque décision.",
+    "duration": "3 à 5 minutes",
+    "mobile": "Conçu pour mobile",
+    "noData": "Aucune donnée personnelle collectée",
+    "context": "<b>Avant de commencer :</b> les Palestiniens de Jérusalem-Est ont généralement le statut de résident permanent israélien, tandis que ceux de Cisjordanie portent une carte d’identité de l’Autorité palestinienne. La distance peut être courte, mais les règles de circulation, de résidence et de vie familiale diffèrent.",
+    "how": "Comment cela fonctionne-t-il ?",
+    "question": "Choisissez l’identité que vous porterez",
+    "blueChip": "Bleue · Jérusalem",
+    "blueTitle": "Vous êtes de Jérusalem",
+    "blueDesc": "Vous avez la résidence permanente. Nour a une identité de Cisjordanie.",
+    "greenChip": "Verte · Cisjordanie",
+    "greenTitle": "Vous êtes de Cisjordanie",
+    "greenDesc": "Vous avez une identité de Cisjordanie. Nour a la résidence de Jérusalem.",
+    "note": "Nour est un personnage composite fictif. Les obstacles juridiques et administratifs sont des réalités documentées ; les résultats varient selon les cas et des exceptions limitées peuvent s’appliquer."
+   },
+   "how": {
+    "title": "Comment vivre cette histoire",
+    "ready": "J’ai compris — commencer",
+    "steps": [
+     "Choisissez l’une des deux identités.",
+     "Prenez les décisions d’un couple sur douze ans.",
+     "Après chaque choix, lisez la réalité documentée.",
+     "À la fin, découvrez des cas réels, des sources et des actions possibles."
+    ]
+   },
+   "common": {
+    "you": "Vous",
+    "nour": "Nour",
+    "jerusalem": "Jérusalem",
+    "westBank": "Cisjordanie",
+    "year": "Année",
+    "beginning": "le début",
+    "continue": "Continuer",
+    "finish": "Voir ce que les années révèlent",
+    "documented": "Réalité documentée",
+    "livingApart": "Vous vivez séparément",
+    "livingJerusalem": "Ensemble à Jérusalem",
+    "livingWestBank": "Ensemble en Cisjordanie"
+   },
+   "chapters": [
+    {
+     "title": "Le commencement",
+     "year": 0,
+     "text": "C’était le mariage d’un cousin à Ramallah. Nour renverse du thé sur votre manche, s’excuse dans trois dialectes et vous fait rire jusqu’à oublier votre gêne. Entre vos maisons : un mur et des checkpoints. <em>Vous ne pensiez pas aux papiers. Vous pensiez au rire de Nour.</em>",
+     "choices": [
+      {
+       "text": "Tomber amoureux malgré tout",
+       "log": "L’amour a commencé entre deux systèmes d’identité",
+       "consequence": "Bien sûr. L’amour ne vérifie pas la couleur des cartes. Le système que vous allez affronter, si.",
+       "next": 1
+      }
+     ]
+    },
+    {
+     "title": "Se voir",
+     "year": 1,
+     "text": "Après un an, vous connaissez le rythme des passages. Pour passer un week-end ensemble, quelqu’un doit se déplacer, et les déplacements entre Jérusalem et la Cisjordanie dépendent des permis et des checkpoints.",
+     "choices": [
+      {
+       "text": "Nour demande un permis de visite",
+       "log": "Votre vie dépend des décisions de permis",
+       "consequence": "Un permis peut être limité, retardé ou refusé. Les projets deviennent provisoires et chaque réunion a une date d’expiration.",
+       "fact": "Les détenteurs d’une identité de Cisjordanie ont généralement besoin d’un permis israélien pour entrer à Jérusalem-Est. Les critères, la durée et l’approbation varient.",
+       "next": 2
+      },
+      {
+       "text": "Vous traversez à sa place",
+       "log": "Vous avez porté la distance",
+       "consequenceBlue": "Comme résident de Jérusalem, vous pouvez généralement rejoindre Nour plus facilement que Nour ne peut vous rejoindre.",
+       "consequenceGreen": "Avec une identité de Cisjordanie, votre accès à Jérusalem dépend d’une autorisation : la liberté de mouvement du couple est inégale dès le départ.",
+       "fact": "La possibilité de voyager dépend du statut juridique, des règles de permis et des checkpoints, pas seulement de la distance.",
+       "next": 2
+      }
+     ]
+    },
+    {
+     "title": "Vous décidez de vous marier",
+     "year": 2,
+     "text": "Après deux ans de week-ends volés, vous êtes sûrs. Nour vous demande en mariage sur un toit, avec les lumières de la mauvaise ville derrière. <em>Oui.</em> Puis vient une question banale pour beaucoup de couples : où allez-vous vivre ?",
+     "choices": [
+      {
+       "text": "Construire notre foyer à Jérusalem",
+       "log": "Vous avez choisi Jérusalem avec un statut précaire",
+       "living": "jerusalem",
+       "consequenceBlue": "Vous créez un foyer à Jérusalem. Nour peut n’avoir accès qu’à un permis temporaire, si les conditions sont remplies, sans voie normale vers un statut permanent et avec des renouvellements répétés.",
+       "consequenceGreen": "Vous créez un foyer à Jérusalem. Votre capacité à y vivre avec Nour dépend d’autorisations temporaires, de critères et de renouvellements plutôt que d’un statut stable.",
+       "fact": "La loi sur la citoyenneté et l’entrée limite la citoyenneté et la résidence des conjoints de Cisjordanie et de Gaza, avec des permis limités et des exceptions humanitaires.",
+       "next": 3
+      },
+      {
+       "text": "Construire notre foyer en Cisjordanie",
+       "log": "Vous avez choisi la Cisjordanie tout en protégeant la résidence de Jérusalem",
+       "living": "westBank",
+       "consequence": "Vous construisez votre vie en Cisjordanie, mais le résident de Jérusalem doit continuer à prouver que Jérusalem reste son « centre de vie » pour protéger son statut et ses droits sociaux.",
+       "fact": "La résidence permanente de Jérusalem-Est peut être révoquée si les autorités estiment que le centre de vie n’est plus à Jérusalem.",
+       "next": 3
+      },
+      {
+       "text": "Rester mariés, mais vivre séparément",
+       "log": "Mariés dans deux foyers",
+       "living": "apart",
+       "consequence": "Deux maisons, deux lits, deux écrans à minuit. La séparation semble être l’option la moins dangereuse pour le statut juridique de chacun.",
+       "fact": "Certains couples vivent séparément ou avec des solutions temporaires parce que chaque voie vers une vie commune comporte des risques juridiques et pratiques.",
+       "next": 3
+      }
+     ]
+    },
+    {
+     "title": "Vous demandez simplement à vivre ensemble",
+     "year": 3,
+     "text": "Vous rassemblez certificats, baux, factures, photos et preuves d’une relation qui vous paraît évidente. Puis vous attendez. <em>Encore.</em>",
+     "choices": [
+      {
+       "text": "Ouvrir la réponse",
+       "log": "Vous êtes entrés dans une procédure longue et incertaine",
+       "consequence": "Il n’existe pas de voie ordinaire vers la citoyenneté ou la résidence permanente pour le conjoint de Cisjordanie. Certaines personnes obtiennent des permis temporaires, mais avec renouvellements et précarité pendant des années.",
+       "fact": "La loi temporaire de 2022, prolongée jusqu’au 14 mars 2027, interdit en général la citoyenneté ou la résidence aux habitants de Cisjordanie et de Gaza, sous réserve de permis et d’exceptions définis.",
+       "next": 4
+      }
+     ]
+    },
+    {
+     "title": "Un enfant",
+     "year": 5,
+     "text": "Malgré tout, une joie : un bébé avec les yeux de Nour et votre entêtement. Puis viennent les formulaires. Le statut de l’enfant peut dépendre des documents des parents, de la résidence et du lieu de naissance.",
+     "choices": [
+      {
+       "text": "Commencer l’enregistrement",
+       "log": "Vous avez dû prouver la place de l’enfant dans la famille",
+       "consequence": "Vous fournissez des preuves de filiation, de résidence et d’éligibilité. Un enfant né dans une seule famille peut pourtant connaître des retards et une incertitude administrative.",
+       "fact": "L’enregistrement des enfants à Jérusalem-Est peut nécessiter des procédures et des preuves distinctes. Des retards et des enfants sans statut stable ont été documentés.",
+       "next": 5
+      }
+     ]
+    },
+    {
+     "title": "La nuit de l’hôpital",
+     "year": 8,
+     "text": "Trois heures du matin. La fièvre de votre enfant ne baisse pas. Un hôpital spécialisé se trouve à Jérusalem-Est. Une fois encore, les documents déterminent qui peut voyager ensemble.",
+     "choices": [
+      {
+       "text": "Le résident de Jérusalem emmène l’enfant",
+       "log": "La famille s’est séparée pendant une urgence",
+       "consequence": "Un parent part, l’autre attend une autorisation ou des nouvelles. L’enfant est soigné ; le sentiment d’impuissance demeure.",
+       "fact": "Les patients et accompagnateurs de Cisjordanie peuvent avoir besoin de permis pour accéder aux hôpitaux de Jérusalem-Est. Des procédures existent, mais l’accès peut nécessiter des autorisations et des passages.",
+       "next": 6
+      },
+      {
+       "text": "Essayer de traverser ensemble",
+       "log": "Vous avez affronté le checkpoint ensemble",
+       "consequence": "Vous voyagez ensemble en sachant que les contrôles et les autorisations peuvent décider si les deux parents atteindront l’hôpital.",
+       "fact": "Le passage aux checkpoints dépend de l’identité et des permis. La possibilité de rester ensemble pendant le trajet peut varier pour chaque membre de la famille.",
+       "next": 6
+      }
+     ]
+    },
+    {
+     "title": "Douze ans",
+     "year": 12,
+     "text": "Vous avez construit une vie faite de visites, formulaires, renouvellements, preuves et attente. L’amour a survécu. Mais survivre ne devrait pas être la norme du droit à la vie familiale.",
+     "choices": [
+      {
+       "text": "Comprendre ce que cela signifie",
+       "log": "Vous avez continué à choisir la famille",
+       "consequence": "Les documents n’ont jamais demandé si vous étiez une famille. Vous l’étiez. L’incertitude venait du système autour de vous.",
+       "fact": "Le droit à la vie familiale est reconnu par le droit international des droits humains. Cette expérience montre l’impact des politiques de résidence et de mouvement sur les familles palestiniennes.",
+       "next": "end"
+      }
+     ]
+    }
+   ],
+   "end": {
+    "eyebrow": "Des années plus tard",
+    "title": "Toujours là. Toujours ensemble.",
+    "aha": "Deux personnes, une famille — et une vie sans cesse divisée par les documents, les frontières et les autorisations.",
+    "message": "Vos choix ont changé le parcours, mais aucun n’a supprimé l’inégalité de fond. Le poids vient du système, pas de la famille.",
+    "disclaimer": "<b>Important :</b> cette expérience est éducative et militante ; elle ne constitue pas un conseil juridique. Nour est fictif ; les tendances et les cas réels reposent sur des documents publics. Les résultats individuels varient et des exceptions limitées peuvent s’appliquer. Sources vérifiées le 1er août 2026."
+   },
+   "summary": {
+    "together": "Ensemble",
+    "years": "12 ans et plus",
+    "living": "Mode de vie",
+    "cost": "Ce que cela a exigé",
+    "choices": "choix difficiles"
+   },
+   "reality": {
+    "title": "Ce que cela révèle sur la Palestine",
+    "intro": "Il ne s’agit pas de deux pays lointains, mais de communautés palestiniennes séparées par différents régimes juridiques dans un espace très réduit.",
+    "items": [
+     {
+      "title": "La distance n’est pas l’obstacle principal",
+      "text": "Jérusalem et des communautés proches de Cisjordanie peuvent être à quelques minutes, mais les déplacements exigent parfois permis, checkpoints et itinéraires différents."
+     },
+     {
+      "title": "Une famille peut avoir plusieurs statuts",
+      "text": "Conjoints et enfants peuvent avoir des documents différents et des droits différents à la circulation, au séjour, à la santé et aux services."
+     },
+     {
+      "title": "Le temporaire devient une manière de vivre",
+      "text": "Renouvellements, preuves et incertitude peuvent suivre une famille pendant des années et affecter travail, logement, parentalité et urgences."
+     }
+    ]
+   },
+   "realStories": {
+    "title": "Des vies réelles derrière ce schéma",
+    "intro": "Résumés de cas documentés publiquement. Les noms sont omis sauf lorsqu’ils ont été rendus publics par la source.",
+    "link": "Lire le cas documenté",
+    "items": [
+     {
+      "title": "Trois ans pour obtenir une réponse",
+      "text": "Un enseignant de Jérusalem-Est a épousé une femme de Cisjordanie. Après des retards, deux recours administratifs et une requête judiciaire, la demande a été approuvée.",
+      "url": "hamokedDelay"
+     },
+     {
+      "title": "Vingt-cinq ans de permis renouvelables",
+      "text": "Une femme de Cisjordanie a vécu à Jérusalem-Est depuis 1995 avec des permis renouvelables. Devenue veuve, elle a élevé sa famille sans statut stable ni pleins droits sociaux.",
+      "url": "hamokedWidow"
+     },
+     {
+      "title": "Des enfants sans enregistrement stable",
+      "text": "Un résident de Jérusalem et son épouse de Cisjordanie ont dû prouver à plusieurs reprises la filiation tandis que leurs deux enfants restaient sans enregistrement sûr.",
+      "url": "hamokedChildren"
+     }
+    ]
+   },
+   "sources": {
+    "title": "Sources et approfondissements",
+    "note": "La plateforme doit revoir le langage juridique avant chaque lancement, car lois et procédures peuvent changer.",
+    "items": [
+     "Knesset : prolongation de 2026 de la loi jusqu’au 14 mars 2027.",
+     "HaMoked : cas documentés sur le regroupement familial, les permis et l’enregistrement des enfants.",
+     "B’Tselem : statistiques sur la révocation de résidence et rapports sur la séparation familiale."
+    ]
+   },
+   "actions": {
+    "title": "Transformer la compréhension en action",
+    "intro": "Partagez l’expérience, écrivez à un représentant ou recommencez avec l’autre identité.",
+    "email": "Écrire à un représentant",
+    "share": "Partager cette histoire",
+    "other": "Vivre l’autre identité",
+    "nextVisitor": "Terminer et réinitialiser pour la prochaine personne"
+   },
+   "mail": {
+    "subject": "Le droit à la vie familiale — Un seul amour, deux identités",
+    "body": "Madame, Monsieur,\n\nJe viens de terminer une histoire interactive sur un couple palestinien — une personne résidente de Jérusalem et une personne portant une identité de Cisjordanie — qui essaie de vivre ensemble en famille.\n\nLa loi sur la citoyenneté et l’entrée limite le regroupement familial et peut rendre les familles dépendantes de permis temporaires, de renouvellements et d’exceptions. Je vous demande de soulever l’impact de ces politiques et de défendre une protection égale du droit à la vie familiale.\n\nCordialement"
+   },
+   "toast": {
+    "copied": "Lien copié",
+    "saved": "Image enregistrée",
+    "reset": "Expérience réinitialisée"
+   },
+   "badge": {
+    "title": "Vous vous êtes choisis",
+    "sub": "Badge témoin · enregistré sur cet appareil uniquement",
+    "progress": "Histoire 1 sur 14 de la boîte à outils Communicating Palestine",
+    "howOpen": "Comment ça marche ?",
+    "howClose": "Masquer",
+    "start": "Commencer",
+    "tracker": "Choix difficiles",
+    "sourceLabel": "Source",
+    "picked": "Votre choix"
+   },
+   "scenes": {
+    "flip": "Touchez pour voir le verso",
+    "carry": "Porter cette identité",
+    "back": {
+     "blue": [
+      [
+       "Statut",
+       "Résidence permanente, pas la citoyenneté"
+      ],
+      [
+       "Résidence",
+       "Révocable si le ‘centre de vie’ quitte Jérusalem"
+      ],
+      [
+       "Conjoint de Cisjordanie",
+       "Sur permis ; aucune voie ordinaire vers un statut permanent"
+      ]
+     ],
+     "green": [
+      [
+       "Statut",
+       "Carte d’identité de l’Autorité palestinienne"
+      ],
+      [
+       "Déplacements",
+       "Entrer à Jérusalem exige un permis israélien"
+      ],
+      [
+       "Conjoint de Jérusalem",
+       "Vivre ensemble dépend de permis temporaires"
+      ]
+     ]
+    },
+    "distance": {
+     "title": "À quelle distance êtes-vous ?",
+     "hint": "Glissez pour aller de chez vous à chez Nour",
+     "you": "Chez vous",
+     "nour": "Chez Nour",
+     "wall": "Barrière",
+     "checkpoint": "Checkpoint",
+     "km": "environ 15 km",
+     "done": "Quinze kilomètres. Un checkpoint. Des règles différentes pour chacun de vous."
+    },
+    "calendar": {
+     "title": "Planifier un week-end ensemble",
+     "hint": "Touchez deux jours",
+     "stamp": "Permis · en attente",
+     "done": "Quelqu’un doit se déplacer. Chaque projet attend une autorisation."
+    },
+    "housing": {
+     "title": "Où allez-vous vivre ?",
+     "hint": "Touchez un lieu pour y placer votre maison",
+     "jerusalem": "Jérusalem",
+     "westBank": "Cisjordanie",
+     "apart": "Deux maisons",
+     "wall": "Barrière"
+    },
+    "documents": {
+     "title": "Constituez votre dossier",
+     "hint": "Touchez chaque document pour l’ajouter à la demande",
+     "items": [
+      "Acte de mariage",
+      "Bail",
+      "Factures",
+      "Photographies",
+      "Preuve de la relation"
+     ],
+     "waiting": "En attente",
+     "months": "mois, et ça continue"
+    },
+    "form": {
+     "title": "Déclaration de naissance",
+     "hint": "Touchez chaque champ pour le remplir",
+     "fields": [
+      [
+       "Nom de l’enfant",
+       "Les yeux de Nour, votre entêtement"
+      ],
+      [
+       "Lieu de naissance",
+       "Jérusalem-Est"
+      ],
+      [
+       "Parent 1 · statut",
+       "Résidence permanente à Jérusalem"
+      ],
+      [
+       "Parent 2 · statut",
+       "Carte d’identité de Cisjordanie"
+      ],
+      [
+       "Statut de l’enfant",
+       "En attente"
+      ]
+     ],
+     "pending": "En attente"
+    },
+    "clock": {
+     "title": "3 h du matin",
+     "hint": "Les minutes passent pendant que vous décidez"
+    },
+    "timeline": {
+     "title": "Vos douze années",
+     "hint": "Touchez une année pour vous souvenir"
+    },
+    "tracker": {
+     "open": "Voir votre parcours",
+     "close": "Masquer le parcours"
+    }
+   },
+   "footer": {
+    "follow": "Suivre Y+",
+    "story": "Vous avez une histoire à partager ?",
+    "share": "Partagez-la avec nous",
+    "contact": "Contacter Y+"
+   }
+  },
+  "ar": {
+   "skip": "انتقل إلى المحتوى",
+   "modeOnline": "تجربة تفاعلية",
+   "modeKiosk": "وضع المعرض",
+   "intro": {
+    "eyebrow": "قصة تفاعلية عن الحق في الحياة الأسرية",
+    "title": "حبٌّ واحد،<br><span class=\"accent\">وهويّتان</span>",
+    "lede": "وجدتما بعضكما على جانبي جدار. الآن حاولا بناء حياة عادية معاً، بينما تفرض هويتان قانونيتان مختلفتان شروطهما على كل قرار.",
+    "duration": "٣–٥ دقائق",
+    "mobile": "مصممة للهاتف",
+    "noData": "لا نجمع بيانات شخصية",
+    "context": "<b>قبل أن تبدأ:</b> يحمل الفلسطينيون في القدس الشرقية عادةً إقامة دائمة إسرائيلية، بينما يحمل الفلسطينيون في الضفة الغربية هوية صادرة عن السلطة الفلسطينية. المسافة قصيرة، لكن قواعد الحركة والإقامة والحياة الأسرية ليست متساوية.",
+    "how": "كيف تعمل التجربة؟",
+    "question": "اختر الهوية التي ستحملها في القصة",
+    "blueChip": "زرقاء · القدس",
+    "blueTitle": "أنت من القدس",
+    "blueDesc": "تحمل إقامة دائمة، بينما تحمل نور هوية الضفة الغربية.",
+    "greenChip": "خضراء · الضفة",
+    "greenTitle": "أنت من الضفة الغربية",
+    "greenDesc": "تحمل هوية الضفة، بينما تحمل نور إقامة القدس.",
+    "note": "نور شخصية خيالية مركّبة. العوائق القانونية والإدارية الواردة أنماط موثقة، لكن نتائج القضايا تختلف وقد تنطبق استثناءات محدودة."
+   },
+   "how": {
+    "title": "كيف تعيش القصة؟",
+    "ready": "فهمت — ابدأ",
+    "steps": [
+     "اختر واحدة من الهويتين.",
+     "اتخذ قرارات زوجين خلال اثني عشر عاماً.",
+     "بعد كل قرار، اقرأ الواقع الموثق خلفه.",
+     "في النهاية، تعرّف إلى حالات حقيقية ومصادر وخيارات للتحرك."
+    ]
+   },
+   "common": {
+    "you": "أنت",
+    "nour": "نور",
+    "jerusalem": "القدس",
+    "westBank": "الضفة الغربية",
+    "year": "السنة",
+    "beginning": "البداية",
+    "continue": "تابع",
+    "finish": "شاهد ماذا تكشف السنوات",
+    "documented": "واقع موثق",
+    "livingApart": "تعيشان منفصلين",
+    "livingJerusalem": "معاً في القدس",
+    "livingWestBank": "معاً في الضفة الغربية"
+   },
+   "chapters": [
+    {
+     "title": "كيف بدأت الحكاية",
+     "year": 0,
+     "text": "كان عرس أحد الأقارب في رام الله. سكبت نور الشاي على كمّك، واعتذرت بثلاث لهجات، ثم أضحكتك حتى نسيت إحراجك. بين منزليكما جدار وحواجز. <em>لم تكن تفكر بالأوراق، بل بضحكة نور.</em>",
+     "choices": [
+      {
+       "text": "أحبب نور رغم كل شيء",
+       "log": "بدأ الحب بين نظامين مختلفين للهوية",
+       "consequence": "بالطبع تفعل. الحب لا يفحص لون الهوية، لكن النظام الذي ستواجهانه يفعل ذلك طوال الوقت.",
+       "next": 1
+      }
+     ]
+    },
+    {
+     "title": "محاولة اللقاء",
+     "year": 1,
+     "text": "بعد عام، حفظتما إيقاع العبور. لقضاء عطلة نهاية أسبوع معاً، يجب أن ينتقل أحدكما، والحركة بين القدس والضفة محكومة بالتصاريح والحواجز.",
+     "choices": [
+      {
+       "text": "تتقدم نور بطلب تصريح زيارة",
+       "log": "عشتما وفق قرارات التصاريح",
+       "consequence": "قد يكون التصريح محدوداً أو متأخراً أو مرفوضاً. تصبح الخطط مؤقتة، وكل لقاء يحمل تاريخ انتهاء.",
+       "fact": "يحتاج حامل هوية الضفة الغربية عادةً إلى تصريح إسرائيلي لدخول القدس الشرقية. تختلف الأهلية والغاية والمدة وقرار الموافقة.",
+       "next": 2
+      },
+      {
+       "text": "تقوم أنت بالعبور",
+       "log": "حملت عبء المسافة مراراً",
+       "consequenceBlue": "بصفتك من سكان القدس، تستطيع عادةً الوصول إلى نور بسهولة أكبر من قدرتها على الوصول إليك، فتتحمل معظم التنقل.",
+       "consequenceGreen": "بصفتك حامل هوية الضفة، يعتمد دخولك إلى القدس على الإذن؛ لذلك تبدأ العلاقة بحرية حركة غير متساوية.",
+       "fact": "تتحدد إمكانية السفر الفعلية بحسب الوضع القانوني وقواعد التصاريح والحواجز، لا بحسب المسافة الجغرافية وحدها.",
+       "next": 2
+      }
+     ]
+    },
+    {
+     "title": "تقرران الزواج",
+     "year": 2,
+     "text": "بعد عامين من اللقاءات المسروقة، أصبحتما متأكدين. تطلب نور يدك على سطح يطل على أضواء المدينة الخطأ. <em>نعم.</em> ثم يأتي السؤال الذي يعتبره غيركما عادياً: أين ستعيشان؟",
+     "choices": [
+      {
+       "text": "نبني بيتنا في القدس",
+       "log": "اخترتما القدس مع وضع قانوني غير مستقر",
+       "living": "jerusalem",
+       "consequenceBlue": "تبنيان بيتاً في القدس. قد تكون نور مؤهلة لتصريح إقامة مؤقت فقط، إن انطبقت الشروط، دون مسار اعتيادي للإقامة الدائمة، ومع تجديدات متكررة تتحكم بالحياة اليومية.",
+       "consequenceGreen": "تبنيان بيتاً في القدس. قدرتك على العيش هناك مع نور تعتمد على إذن مؤقت وشروط وتجديدات، لا على وضع مستقر طويل الأمد.",
+       "fact": "يقيّد قانون المواطنة والدخول منح المواطنة أو الإقامة لأزواج من الضفة الغربية وغزة، مع تصاريح واستثناءات إنسانية محدودة.",
+       "next": 3
+      },
+      {
+       "text": "نبني بيتنا في الضفة الغربية",
+       "log": "اخترتما الضفة مع محاولة حماية إقامة القدس",
+       "living": "westBank",
+       "consequence": "تبنيان حياتكما في الضفة، لكن صاحب إقامة القدس يضطر إلى الاستمرار في إثبات أن القدس هي «مركز حياته» لحماية الإقامة والحقوق الاجتماعية.",
+       "fact": "يمكن سحب الإقامة الدائمة من الفلسطينيين في القدس الشرقية إذا قررت السلطات أن مركز حياتهم لم يعد في القدس، ويُطلب لذلك إثبات السكن والفواتير والعمل وغيرها.",
+       "next": 3
+      },
+      {
+       "text": "نبقى متزوجين لكن نعيش منفصلين",
+       "log": "زواج في منزلين",
+       "living": "apart",
+       "consequence": "منزلان وسريرَان وشاشتان عند منتصف الليل. يصبح الانفصال الخيار الذي يبدو أقل خطراً على الوضع القانوني لكليكما.",
+       "fact": "تعيش بعض الأسر منفصلة أو ضمن ترتيبات مؤقتة لأن كل مسار متاح للعيش معاً يحمل مخاطر قانونية وعملية.",
+       "next": 3
+      }
+     ]
+    },
+    {
+     "title": "تتقدمان بطلب للعيش معاً",
+     "year": 3,
+     "text": "تجمعان الشهادات وعقود السكن والفواتير والصور، لإثبات علاقة واضحة تماماً بالنسبة لكما. ثم تنتظران. <em>وتنتظران.</em>",
+     "choices": [
+      {
+       "text": "افتح النتيجة",
+       "log": "دخلتما مساراً طويلاً وغير مضمون",
+       "consequence": "لا يوجد مسار اعتيادي يمنح زوج الضفة المواطنة أو الإقامة الدائمة. قد يحصل بعض الأشخاص على تصاريح مؤقتة ضمن شروط عمرية أو استثناءات، لكنها تتطلب التجديد وقد تبقى غير مستقرة لسنوات.",
+       "fact": "يفرض قانون 2022 المؤقت، والممدد حتى 14 آذار 2027، منعاً عاماً على منح المواطنة أو الإقامة لسكان الضفة الغربية وغزة، مع تصاريح واستثناءات محددة.",
+       "next": 4
+      }
+     ]
+    },
+    {
+     "title": "طفل",
+     "year": 5,
+     "text": "رغم كل شيء، تأتي الفرحة: طفل بعيني نور وعنادك. ثم تبدأ النماذج. يدخل طفلك نظاماً قد يعتمد فيه التسجيل والوضع القانوني على هويات الوالدين ومكان الإقامة والولادة.",
+     "choices": [
+      {
+       "text": "ابدآ إجراءات تسجيل الطفل",
+       "log": "اضطررتما لإثبات مكان الطفل داخل أسرته",
+       "consequence": "تقدمان وثائق لإثبات الأبوة أو الأمومة والسكن والأهلية. طفل مولود في أسرة واحدة قد يواجه رغم ذلك تأخيراً أو غموضاً في الأوراق.",
+       "fact": "قد يتطلب تسجيل الأطفال ووضعهم في القدس الشرقية إجراءات وأدلة منفصلة. وثقت منظمات حقوقية تأخيرات وحالات بقي فيها أطفال دون وضع قانوني مستقر أثناء فحص الملفات.",
+       "next": 5
+      }
+     ]
+    },
+    {
+     "title": "ليلة المستشفى",
+     "year": 8,
+     "text": "الساعة الثالثة فجراً. حرارة طفلكما لا تنخفض، والمستشفى المتخصص في القدس الشرقية. الوقت يمر، ومرة أخرى تحدد الوثائق من يستطيع الوصول مع الطفل.",
+     "choices": [
+      {
+       "text": "يأخذ صاحب إقامة القدس الطفل",
+       "log": "انقسمت الأسرة خلال حالة طبية طارئة",
+       "consequence": "يسافر أحد الوالدين، بينما ينتظر الآخر الإذن أو خبراً عبر الهاتف. يتلقى الطفل العلاج، لكن شعور العجز يبقى.",
+       "fact": "قد يحتاج مرضى الضفة الغربية ومرافقوهم إلى تصاريح للوصول إلى مستشفيات القدس الشرقية. توجد ترتيبات للحالات والإحالات الطبية، لكن الوصول قد يظل مرتبطاً بالموافقات وإجراءات العبور.",
+       "next": 6
+      },
+      {
+       "text": "تحاولان العبور معاً",
+       "log": "واجهتما الحاجز معاً",
+       "consequence": "تسافران معاً وأنتما تعرفان أن الفحص والتصاريح قد يحددان ما إذا كان الوالدان سيصلان إلى المستشفى معاً.",
+       "fact": "تخضع الحركة عبر الحواجز للهوية والتصاريح. وقدرة الأسرة على البقاء معاً أثناء التنقل تعتمد على وضع كل فرد فيها.",
+       "next": 6
+      }
+     ]
+    },
+    {
+     "title": "اثنا عشر عاماً",
+     "year": 12,
+     "text": "بنيتما حياة من الزيارات والنماذج والتجديدات والإثباتات والانتظار. بقي الحب، لكن مجرد البقاء لا يجب أن يكون معيار الحق في الحياة الأسرية.",
+     "choices": [
+      {
+       "text": "اعرف ماذا تعني هذه القصة",
+       "log": "واصلتما اختيار الأسرة",
+       "consequence": "لم تسأل الأوراق يوماً إن كنتما أسرة. كنتما كذلك دائماً. مصدر عدم الاستقرار كان النظام المحيط بكما.",
+       "fact": "الحق في الحياة الأسرية معترف به في القانون الدولي لحقوق الإنسان. تركز هذه التجربة على أثر سياسات الإقامة والحركة في الأسر الفلسطينية.",
+       "next": "end"
+      }
+     ]
+    }
+   ],
+   "end": {
+    "eyebrow": "بعد سنوات",
+    "title": "ما زلتما هنا، وما زلتما تختاران بعضكما.",
+    "aha": "شخصان وأسرة واحدة، لكن حياة تتكرر تجزئتها بالهويات والحدود والتصاريح.",
+    "message": "غيّرت اختياراتك الطريق، لكنها لم تُزل عدم المساواة الأساسية. هذه هي الفكرة: العبء موجود في النظام، وليس في الأسرة.",
+    "disclaimer": "<b>مهم:</b> هذه تجربة توعوية ومناصرة وليست استشارة قانونية. نور شخصية خيالية، أما الأنماط وملخصات الحالات الحقيقية فمبنية على مواد منشورة وموثقة. تختلف نتائج القضايا، وقد تنطبق استثناءات محدودة. آخر مراجعة للمصادر: 1 آب 2026."
+   },
+   "summary": {
+    "together": "معاً",
+    "years": "12 عاماً وما زالت الحكاية مستمرة",
+    "living": "ترتيب السكن",
+    "cost": "ما تطلبته الحياة",
+    "choices": "خيارات صعبة"
+   },
+   "reality": {
+    "title": "ماذا تكشف التجربة عن الواقع في فلسطين؟",
+    "intro": "القصة لا تتحدث عن بلدين بعيدين، بل عن تجمعات فلسطينية تفصل بينها أنظمة قانونية مختلفة داخل مساحة جغرافية صغيرة جداً.",
+    "items": [
+     {
+      "title": "المسافة ليست العائق الأساسي",
+      "text": "قد تفصل دقائق بين القدس وبلدات قريبة في الضفة، لكن الحركة قد تحتاج تصاريح وحواجز ومسارات مختلفة."
+     },
+     {
+      "title": "الأسرة الواحدة قد تحمل أوضاعاً متعددة",
+      "text": "قد يحمل الزوجان والأطفال وثائق مختلفة، ولكل وثيقة أثر مختلف في الحركة والإقامة والصحة والخدمات."
+     },
+     {
+      "title": "المؤقت يتحول إلى أسلوب حياة",
+      "text": "التجديدات والإثباتات وعدم اليقين قد تلاحق الأسرة سنوات، وتؤثر في العمل والسكن وتربية الأطفال والطوارئ."
+     }
+    ]
+   },
+   "realStories": {
+    "title": "حياة حقيقية خلف هذا النمط",
+    "intro": "هذه ملخصات مختصرة لحالات منشورة وموثقة. حُجبت الأسماء هنا إلا عندما نشرتها الجهة المصدر بصورة علنية.",
+    "link": "اقرأ الحالة الموثقة",
+    "items": [
+     {
+      "title": "ثلاث سنوات للحصول على جواب",
+      "text": "تزوج معلّم من القدس الشرقية امرأة من الضفة. وبعد سنوات من التأخير وطلبين إداريين والتماس قضائي، تمت الموافقة على طلب لمّ الشمل.",
+      "url": "hamokedDelay"
+     },
+     {
+      "title": "خمسة وعشرون عاماً من التصاريح المتجددة",
+      "text": "عاشت امرأة من الضفة في القدس الشرقية منذ 1995 بتصاريح إقامة متجددة. وبعد وفاة زوجها، واصلت رعاية الأسرة دون وضع مستقر وكامل الحقوق الاجتماعية.",
+      "url": "hamokedWidow"
+     },
+     {
+      "title": "طفلان دون تسجيل مستقر",
+      "text": "واجه أب من القدس وزوجته من الضفة مطالب متكررة لإثبات الأبوة، بينما بقي طفلاهما الصغيران دون تسجيل ووضع قانوني مستقر.",
+      "url": "hamokedChildren"
+     }
+    ]
+   },
+   "sources": {
+    "title": "الأدلة ومصادر القراءة",
+    "note": "ينبغي أن تراجع المنصة الصياغة القانونية قبل كل إطلاق للحملة، لأن القوانين والإجراءات وممارسات التصاريح قد تتغير.",
+    "items": [
+     "الكنيست: تمديد قانون المواطنة والدخول عام 2026 حتى 14 آذار 2027.",
+     "هموكيد: حالات موثقة حول لمّ الشمل والتصاريح وتسجيل الأطفال.",
+     "بتسيلم: إحصاءات سحب الإقامة في القدس وتقارير فصل الأسر."
+    ]
+   },
+   "actions": {
+    "title": "حوّل الفهم إلى فعل",
+    "intro": "شارك التجربة، أو راسل ممثلاً منتخباً للدفاع عن الحق في الحياة الأسرية، أو أعد القصة من منظور الهوية الأخرى.",
+    "email": "راسل ممثلاً منتخباً",
+    "share": "شارك هذه القصة",
+    "other": "عش التجربة بالهوية الأخرى",
+    "nextVisitor": "إنهاء وإعادة التجربة للزائر التالي"
+   },
+   "mail": {
+    "subject": "الحق في الحياة الأسرية — حب واحد وهويتان",
+    "body": "حضرة الممثل/ة المحترم/ة،\n\nأنهيت تجربة تفاعلية عن زوجين فلسطينيين، أحدهما يحمل إقامة القدس والآخر هوية الضفة الغربية، ويحاولان العيش معاً كأسرة.\n\nيقيّد قانون المواطنة والدخول لمّ الشمل، وقد يترك الأسر معتمدة على تصاريح مؤقتة وتجديدات واستثناءات. أطلب منكم إثارة أثر هذه السياسات ودعم الحماية المتساوية للحق في الحياة الأسرية.\n\nمع الاحترام"
+   },
+   "toast": {
+    "copied": "تم نسخ الرابط",
+    "saved": "تم حفظ صورة المشاركة",
+    "reset": "تمت إعادة التجربة"
+   },
+   "badge": {
+    "title": "اختار كلٌّ منكما الآخر",
+    "sub": "شارة الشاهد · محفوظة على هذا الجهاز فقط",
+    "progress": "القصة 1 من 14 في حقيبة أدوات Communicating Palestine",
+    "howOpen": "كيف تعمل التجربة؟",
+    "howClose": "إخفاء",
+    "start": "ابدأ",
+    "tracker": "قرارات صعبة",
+    "sourceLabel": "المصدر",
+    "picked": "خيارك"
+   },
+   "scenes": {
+    "flip": "اضغط لرؤية الوجه الخلفي",
+    "carry": "احمل هذه الهوية",
+    "back": {
+     "blue": [
+      [
+       "الوضع القانوني",
+       "إقامة دائمة، لا جنسية"
+      ],
+      [
+       "الإقامة",
+       "قد تُسحب إذا انتقل ‘مركز الحياة’ خارج القدس"
+      ],
+      [
+       "الزوج/ة من الضفة",
+       "بتصاريح فقط؛ لا مسار عادي إلى وضع دائم"
+      ]
+     ],
+     "green": [
+      [
+       "الوضع القانوني",
+       "هوية السلطة الفلسطينية"
+      ],
+      [
+       "الحركة",
+       "دخول القدس يتطلب تصريحاً إسرائيلياً"
+      ],
+      [
+       "الزوج/ة من القدس",
+       "العيش معاً يعتمد على تصاريح مؤقتة"
+      ]
+     ]
+    },
+    "distance": {
+     "title": "كم تبعدان عن بعضكما؟",
+     "hint": "اسحب للسفر من بيتك إلى بيت نور",
+     "you": "بيتك",
+     "nour": "بيت نور",
+     "wall": "الجدار",
+     "checkpoint": "حاجز",
+     "km": "نحو 15 كم",
+     "done": "خمسة عشر كيلومتراً. حاجز واحد. قواعد مختلفة لكل منكما."
+    },
+    "calendar": {
+     "title": "خططا لعطلة نهاية أسبوع معاً",
+     "hint": "اختر يومين",
+     "stamp": "تصريح · قيد الانتظار",
+     "done": "على أحدكما أن ينتقل. كل خطة تنتظر إذناً."
+    },
+    "housing": {
+     "title": "أين ستعيشان؟",
+     "hint": "اضغط على مكان لتضع بيتكما فيه",
+     "jerusalem": "القدس",
+     "westBank": "الضفة الغربية",
+     "apart": "بيتان",
+     "wall": "الجدار"
+    },
+    "documents": {
+     "title": "جهّزا ملف الطلب",
+     "hint": "اضغط على كل وثيقة لإضافتها إلى الطلب",
+     "items": [
+      "عقد الزواج",
+      "عقد الإيجار",
+      "فواتير الخدمات",
+      "صور",
+      "إثبات العلاقة"
+     ],
+     "waiting": "انتظار",
+     "months": "شهراً والعدّ مستمر"
+    },
+    "form": {
+     "title": "تسجيل الولادة",
+     "hint": "اضغط على كل حقل لتعبئته",
+     "fields": [
+      [
+       "اسم الطفل",
+       "عينا نور وعنادك"
+      ],
+      [
+       "مكان الولادة",
+       "القدس الشرقية"
+      ],
+      [
+       "الوالد 1 · الوضع",
+       "إقامة دائمة في القدس"
+      ],
+      [
+       "الوالد 2 · الوضع",
+       "هوية الضفة الغربية"
+      ],
+      [
+       "وضع الطفل",
+       "قيد الانتظار"
+      ]
+     ],
+     "pending": "قيد الانتظار"
+    },
+    "clock": {
+     "title": "الثالثة فجراً",
+     "hint": "الدقائق تمضي بينما تقرر"
+    },
+    "timeline": {
+     "title": "اثنتا عشرة سنة",
+     "hint": "اضغط على سنة لتتذكر"
+    },
+    "tracker": {
+     "open": "اعرض مسارك",
+     "close": "أخفِ المسار"
+    }
+   },
+   "footer": {
+    "follow": "تابع Y+",
+    "story": "هل لديك قصة تشاركها معنا؟",
+    "share": "شاركها معنا",
+    "contact": "تواصل مع Y+"
+   }
+  }
+ }
+}
