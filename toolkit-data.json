@@ -329,7 +329,9 @@
     "start": "Begin",
     "tracker": "Difficult choices",
     "sourceLabel": "Source",
-    "picked": "Your choice"
+    "picked": "Your choice",
+    "confirmReset": "Start over? Your choices in this story will be lost.",
+    "startOver": "Start over"
    },
    "scenes": {
     "flip": "Tap to see the back",
@@ -715,7 +717,9 @@
     "start": "Inizia",
     "tracker": "Scelte difficili",
     "sourceLabel": "Fonte",
-    "picked": "La tua scelta"
+    "picked": "La tua scelta",
+    "confirmReset": "Ricominciare? Le scelte fatte in questa storia andranno perse.",
+    "startOver": "Ricomincia"
    },
    "scenes": {
     "flip": "Tocca per vedere il retro",
@@ -1101,7 +1105,9 @@
     "start": "Commencer",
     "tracker": "Choix difficiles",
     "sourceLabel": "Source",
-    "picked": "Votre choix"
+    "picked": "Votre choix",
+    "confirmReset": "Recommencer ? Vos choix dans cette histoire seront perdus.",
+    "startOver": "Recommencer"
    },
    "scenes": {
     "flip": "Touchez pour voir le verso",
@@ -1487,7 +1493,9 @@
     "start": "ابدأ",
     "tracker": "قرارات صعبة",
     "sourceLabel": "المصدر",
-    "picked": "خيارك"
+    "picked": "خيارك",
+    "confirmReset": "البدء من جديد؟ ستُفقد خياراتك في هذه القصة.",
+    "startOver": "ابدأ من جديد"
    },
    "scenes": {
     "flip": "اضغط لرؤية الوجه الخلفي",
